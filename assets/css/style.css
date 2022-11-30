@@ -5,7 +5,37 @@
 
 html,body{
     width: 100%;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto', sans-serif, FontAwesome;
     margin: 0;
     padding: 0;
 }
+
+/* START MOUAD */
+#banner #searchBar{
+    left: 50%;
+    max-width: 1100px;
+    position: absolute;
+    transform: translate(-50%,+50%);
+    width: 100% ;
+}
+
+#banner #searchBar input{
+    border: 2px solid #060609;
+    border-radius: 4px;
+    padding: 8px;
+}
+
+#banner .btn-prim{
+    background-color: var(--secondary-color);
+    color: var(--primary-color);
+    border-radius: 4px;
+    border: 2px solid #060609;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+#banner .btn-prim:hover{
+    box-shadow: inset 0 0 0 10em rgba(0, 0, 0, 0.3);
+}
+
+/* END MOUAD */
