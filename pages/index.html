@@ -15,7 +15,44 @@
 </head>
 <body>
     <header>
-        <nav id="navBar"><!-- HAJJOU --></nav>
+        <!-- ********************"navBar"********************Start HAJJOU******************************** -->
+        <nav id="navBar" class="navbar navbar-expand-sm">
+            <div class="container-fluid flex-nowrap">
+
+              <div class="text-nowrap">
+                <a id="Youtickets" class="navbar-brand fw-bold" href="#">YouTickets.com</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon"></span>
+                </button>
+              </div>
+
+              <div class="collapse navbar-collapse" id="navbarScroll">
+                <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
+                  <li class="nav-item ">
+                    <a class="nav-link active fw-bold" aria-current="page" href="#">About</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link active fw-bold" aria-current="page" href="#">News</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link active fw-bold" aria-current="page" href="#">Teams</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link active fw-bold" aria-current="page" href="#">Contact</a>
+                  </li>
+                </ul>
+              </div>
+
+              <div>
+                <form class="d-flex" role="authentification" >
+                  <button id="btnLogin" class="btn btn-outline m-2 text-nowrap" type="login" data-bs-toggle="modal" data-bs-target="#login">log In</button>
+                  <button id="btnSignup" class="btn btn-outline m-2 text-nowrap" type="signup" data-bs-toggle="modal" data-bs-target="#signup">Sign Up</button>
+                </form>
+              </div>
+            </div>
+
+          </nav>
+        <!-- ********************"navBar"****************END HAJJOU******************************** -->
 
         <section><!-- YOUNESS --></section>
 
@@ -26,10 +63,13 @@
     <section><!-- YOUNESS --></section>
     <section><!-- YOUNESS --></section>
 
-    <footer><!-- HAJJOU --></footer>
+    <footer><!-- HAJJOU -->
+    
+    </footer>
+
 
 </body>
 <script src="../assets/js/jquery.min.js"></script>
-<script src="../assets/js/bootstrap.min.js"></script>
+<script src="../assets/js/bootstrap.bundle.min.js"></script>
 <script src="../assets/js/scripts.js"></script>
 </html>
