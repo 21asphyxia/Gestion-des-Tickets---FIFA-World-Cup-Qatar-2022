@@ -9,6 +9,18 @@ html,body{
     margin: 0;
     padding: 0;
 }
+/*START SALAH*/
+
+#sectionGroups{
+    background-color: var(--secondary-color);
+}
+
+#card *{
+    color: var(--secondary-color);
+}
+
+/*END SALAH*/
+
 .cardsSection .fs-8 {
     font-size: 12px;
 }
