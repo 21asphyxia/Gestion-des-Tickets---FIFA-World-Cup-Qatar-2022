@@ -9,8 +9,6 @@ html,body{
     margin: 0;
     padding: 0;
 }
-
-
 .cardsSection .fs-8 {
     font-size: 12px;
 }
@@ -26,4 +24,33 @@ html,body{
 
 .cardsSection .px-6 {
     padding: 0 7rem;
+}
+
+#navbarScroll.navbar-collapse{
+    flex-grow: 0;
+}
+#btnLogin{
+    background-color: var(--primary-color);
+    color:var(--secondary-color);
+    border: 1px solid ; 
+
+}
+#btnSignup{
+    background-color: var(--secondary-color);
+    color:var(--primary-color);   
+}
+#btnSignup:hover{
+    background-color:#81223e;;
+    color:var(--primary-color);   
+}
+#Youtickets{
+    color:var(--secondary-color);
+}
+#navBar{
+    color: var(--primary-color);
+}
+#footer{
+    background-color: var(--secondary-color);
+    color: var(--primary-color);
+
 }
