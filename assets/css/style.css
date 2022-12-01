@@ -9,3 +9,21 @@ html,body{
     margin: 0;
     padding: 0;
 }
+
+
+.cardsSection .fs-8 {
+    font-size: 12px;
+}
+
+.cardsSection .row-gap {
+    row-gap: 4px;
+}
+
+.cardsSection .fa-angle-right, 
+.cardsSection .view-all {
+    color: var(--secondary-color);
+}       
+
+.cardsSection .px-6 {
+    padding: 0 7rem;
+}
