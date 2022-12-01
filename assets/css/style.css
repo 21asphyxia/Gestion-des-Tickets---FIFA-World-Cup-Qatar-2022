@@ -19,17 +19,23 @@ html,body{
     border: 1px solid ; 
 
 }
-#btnSignup {
+#btnSignup{
     background-color: var(--secondary-color);
-    color:var(--primary-color);
-    border: 1px  ; 
-    
-
+    color:var(--primary-color);   
+}
+#btnSignup:hover{
+    background-color:#81223e;;
+    color:var(--primary-color);   
 }
 #Youtickets{
     color:var(--secondary-color);
 }
 #navBar{
     color: var(--primary-color);
+}
+#footer{
+    background-color: var(--secondary-color);
+    color: var(--primary-color);
+
 }
 
