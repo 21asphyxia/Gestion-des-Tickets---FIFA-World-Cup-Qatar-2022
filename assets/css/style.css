@@ -9,6 +9,7 @@ html,body{
     margin: 0;
     padding: 0;
 }
+/* ___________________________________________START Hajjou___________________________________________ */
 
 #navbarScroll.navbar-collapse{
     flex-grow: 0;
@@ -38,4 +39,9 @@ html,body{
     color: var(--primary-color);
 
 }
+#ftcopyright{
+    background-color: var(--secondary-color);
+    color: var(--primary-color);
 
+}
+/* ___________________________________________END Hajjou___________________________________________ */
