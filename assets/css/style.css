@@ -10,6 +10,10 @@ html,body{
     padding: 0;
 }
 
+header{
+    margin-bottom: 6rem;
+}
+
 a,a:hover{
     all: unset;
 }
@@ -71,6 +75,7 @@ a,a:hover{
 
 /*END SALAH*/
 
+/* Start Youness */
 .cardsSection .fs-8 {
     font-size: 12px;
 }
@@ -87,6 +92,11 @@ a,a:hover{
 .cardsSection .px-6 {
     padding: 0 7rem;
 }
+.cardsSection .card:hover{
+    /* border:3px solid var(--secondary-color); */
+    transform: scale(1.05);
+}
+/* Ends Youness */
 
 #navbarScroll.navbar-collapse{
     flex-grow: 0;
