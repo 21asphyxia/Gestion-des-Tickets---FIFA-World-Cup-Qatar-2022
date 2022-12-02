@@ -9,6 +9,10 @@ html,body{
     margin: 0;
     padding: 0;
 }
+
+a,a:hover{
+    all: unset;
+}
 /* ___________________________________________START Hajjou___________________________________________ */
 
 /* START MOUAD */
@@ -26,7 +30,7 @@ html,body{
     padding: 8px;
 }
 
-#banner .btn-prim{
+.btn-prim{
     background-color: var(--secondary-color);
     color: var(--primary-color);
     border-radius: 4px;
@@ -35,9 +39,23 @@ html,body{
     transition: all 0.3s ease;
 }
 
-#banner .btn-prim:hover{
+.btn-prim:hover{
     box-shadow: inset 0 0 0 10em rgba(0, 0, 0, 0.3);
 }
+
+.sec-color{
+    color: var(--secondary-color);
+}
+
+.sec-border{
+    border-color: var(--secondary-color)!important;
+}
+
+.sec-bg{
+    background-color: var(--secondary-color);
+}
+
+
 
 /* END MOUAD */
 
@@ -105,4 +123,6 @@ html,body{
 }
 /* ___________________________________________END Hajjou___________________________________________ */
 
+.bg-purple{
+    background-color: #DADAFB;
 }
