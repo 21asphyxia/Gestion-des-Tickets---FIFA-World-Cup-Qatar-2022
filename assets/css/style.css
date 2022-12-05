@@ -14,8 +14,9 @@ header{
     margin-bottom: 6rem;
 }
 
-a,a:hover{
-    all: unset;
+a {
+    color: inherit; 
+    text-decoration: inherit;
 }
 /* ___________________________________________START Hajjou___________________________________________ */
 
