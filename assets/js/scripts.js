@@ -8,6 +8,7 @@
 // END YOUNESS
 
 // START MOUAD
+if (window.location.pathname=='/Gestion-des-Tickets---FIFA-World-Cup-Qatar-2022/index.php' || window.location.pathname=='/Gestion-des-Tickets---FIFA-World-Cup-Qatar-2022/') {
 $(function() {
     $('input[name="date"]').daterangepicker({
       autoUpdateInput: false,
@@ -25,4 +26,5 @@ $(function() {
       $(this).val('');
     });
   });
+}
 // END MOUAD

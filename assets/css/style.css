@@ -137,3 +137,7 @@ a {
 .bg-purple{
     background-color: #DADAFB;
 }
+
+#sidenav-collapse-main{
+    height:unset;
+}
