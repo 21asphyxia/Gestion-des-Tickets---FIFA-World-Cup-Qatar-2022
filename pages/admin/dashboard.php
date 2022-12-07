@@ -79,7 +79,7 @@ include_once '../../includes/admin/head.php';
                     <div class="numbers">
                         <p class="text-sm mb-0 text-capitalize font-weight-bold">E-Tickets Disponible</p>
                         <h5 class="font-weight-bolder mb-0">
-                        3,462
+                        7,400
                         </h5>
                     </div>
                     </div>
@@ -100,7 +100,7 @@ include_once '../../includes/admin/head.php';
                     <div class="numbers">
                         <p class="text-sm mb-0 text-capitalize font-weight-bold">E-Tickets Reservés</p>
                         <h5 class="font-weight-bolder mb-0">
-                        3,462
+                        5,400
                         </h5>
                     </div>
                     </div>
@@ -121,7 +121,7 @@ include_once '../../includes/admin/head.php';
                     <div class="numbers">
                         <p class="text-sm mb-0 text-capitalize font-weight-bold">E-Tickets Restants</p>
                         <h5 class="font-weight-bolder mb-0">
-                        103,430
+                        2,000
                         </h5>
                     </div>
                     </div>
@@ -135,7 +135,9 @@ include_once '../../includes/admin/head.php';
             </div>
             </div>
         </div>
-
+        <div class="d-flex justify-content-center">
+            <canvas id="myChart" style="width:100%;max-width:600px;max-height:200px;"></canvas>
+        </div>
     </main>
 </body>
 </html>
