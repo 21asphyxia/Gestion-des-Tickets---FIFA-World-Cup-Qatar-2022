@@ -1,0 +1,27 @@
+/*changing the style of the new search div*/
+#myTable_wrapper{
+    background: #ffffff;
+    border-radius: 8px;
+    border: 1px black solid;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    padding-left: 10px;
+    padding-right: 10px;
+    overflow-x:auto;
+}
+#myTable_wrapper input{ 
+    margin-bottom: 1rem;
+}
+
+/* changed the color of the search border */
+.dataTables_wrapper .dataTables_filter input {
+    border-color: rgb(0, 0, 0)!important;
+}
+/*changed the color of the show enteries border*/
+.dataTables_wrapper .dataTables_length select {
+    border-color: black!important;
+}
+
+.dataTables_wrapper .dataTables_paginate .paginate_button.disabled, .dataTables_wrapper .dataTables_paginate .paginate_button.disabled:hover, .dataTables_wrapper .dataTables_paginate .paginate_button.disabled:active {
+    color: white!important;
+}

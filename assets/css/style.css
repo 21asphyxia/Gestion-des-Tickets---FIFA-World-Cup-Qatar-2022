@@ -200,21 +200,3 @@ a {
     box-shadow: none!important;
 }
 /*END Admin Profile*/
-
-/*TABLE Styling*/
-/*Resizing the img in the products table*/
-.flabImage{
-    width: 3rem;
-
-}
-/*gave some padding to the table container to give it some spacing + used overflow to give it a X scroll in respponsive*/
-.tableContainer{
-    padding: 0rem 2rem  ;
-    overflow-x:auto;
-}
-/*media query so that when it reaches that px size it removes the padding next to the table*/
-@media(max-width: 568px) {
-.tableContainer{
-    padding:0;
-    }    
-}

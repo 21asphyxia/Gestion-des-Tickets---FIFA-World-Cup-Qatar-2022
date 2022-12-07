@@ -27,7 +27,7 @@ include_once '../../includes/admin/head.php';
 
           <tr class="text-center">
             <th class="align-middle" scope="row">1</th>
-            <td ><img class="flagImage" src="../../assets/img/Flag-Senegal.webp" alt="image" width="50px"></td>
+            <td class="align-middle"><img class="flagImage" src="../../assets/img/Flag-Senegal.webp" alt="image" width="50px"></td>
             <td class="align-middle">Senegal</td>
             <td class="align-middle" >Aliou Cissé</td>
             <td class="align-middle" >A</td>
@@ -50,7 +50,7 @@ include_once '../../includes/admin/head.php';
             <form action="" method="POST" id="form" enctype="multipart/form-data" data-parsley-validate>
               <div class="modal-header">
                 <h5 class="modal-title">Add Product</h5>
-                <a href="tableau.html" class="btn-close"></a>
+                <a href="teams.php" class="btn-close"></a>
               </div>
               <div class="modal-body">
                   <!-- HIDDEN INPUT  -->
