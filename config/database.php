@@ -1,19 +1,21 @@
 <?php
 class Database {
     private $host = "localhost";
-    private $db_name = "fifa";
+    private $dbName = "fifa";
     private $username = "root";
-    private $pwd = "";
-    protected function connect(){
-        try{
-        $dsn = 'mysql:host='.$this->host.';dbname='.$this->db_name.';'; // mysql data source name : mysql is the driver name
-        $pdo = new PDO($dsn,$this->username,$this->pwd);
-        $pdo->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE,PDO::FETCH_ASSOC);
-        return $pdo;
-        }
-        catch(PDOException $e){
-            throw new PDOException($e->getMessage(), (int)$e->getCode());
-        }
+    private $password = "";
+    
+    public $con;
+
+    public function __construct(){
+        $this->con = new PDO('mysql:host='.$this->host.';dbname='.$this->dbName.';charset=utf8', $this->username, $this->password);
+        $this->con->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+        return true;
+    }
+
+    public function __destruct()
+    {
+        $this->con = null;
     }
 }
 ?>
