@@ -44,13 +44,13 @@ include_once '../../includes/admin/head.php';
         </tbody>
       </table>
               <!-- MODAL -->
-      <div class="modal fade" id="modal-product" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true" >
+      <div class="modal fade" id="modal-product" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true" >
         <div class="modal-dialog">
           <div class="modal-content">
             <form action="" method="POST" id="form" enctype="multipart/form-data" data-parsley-validate>
               <div class="modal-header">
                 <h5 class="modal-title">Add Product</h5>
-                <a href="teams.php" class="btn-close"></a>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
               </div>
               <div class="modal-body">
                   <!-- HIDDEN INPUT  -->
@@ -90,7 +90,7 @@ include_once '../../includes/admin/head.php';
                 
               </div>
               <div class="modal-footer">
-                <a href="teams.php" class="btn btn-secondary" >Cancel</a>
+                <button data-bs-dismiss="modal" class="btn btn-secondary" >Cancel</button>
                 <button type="submit" name="save" class="btn btn-primary task-action-btn" id="save">Save</button>
                 <button type="submit" name="update" class="btn btn-warning task-action-btn" id="update">Update</button>
               </div>

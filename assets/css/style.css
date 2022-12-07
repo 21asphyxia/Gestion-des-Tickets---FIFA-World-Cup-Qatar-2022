@@ -200,3 +200,15 @@ a {
     box-shadow: none!important;
 }
 /*END Admin Profile*/
+
+/*Styling the close button*/
+.btn-close{
+    background-color: black;
+}
+
+.modal{
+    z-index: 10000;
+}
+.sidenav{
+    z-index: 999;
+}
