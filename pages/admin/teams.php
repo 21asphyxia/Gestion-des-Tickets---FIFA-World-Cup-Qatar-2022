@@ -16,7 +16,8 @@ include_once '../../includes/admin/head.php';
         <thead>
           <tr>
             <th class="text-center" scope="col">Id</th>
-            <th class="text-center" scope="col">Image</th>
+            <th class="text-center" scope="col">Flag</th>
+            <th class="text-center" scope="col">Team</th>
             <th class="text-center" scope="col">Country</th>
             <th class="text-center" scope="col">Coach</th>
             <th class="text-center" scope="col">Groups</th>
@@ -27,6 +28,7 @@ include_once '../../includes/admin/head.php';
 
           <tr class="text-center">
             <th class="align-middle" scope="row">1</th>
+            <td class="align-middle"><img class="flagImage" src="../../assets/img/Flag-Senegal.webp" alt="image" width="50px"></td>
             <td class="align-middle"><img class="flagImage" src="../../assets/img/Flag-Senegal.webp" alt="image" width="50px"></td>
             <td class="align-middle">Senegal</td>
             <td class="align-middle" >Aliou Cissé</td>
@@ -69,7 +71,7 @@ include_once '../../includes/admin/head.php';
                   <div class="mb-3">
                     <label class="form-label">Groups</label>
                     <select class="form-select" id="groups" name="groups" required>
-                      <option hidden>Please select</option>
+                      <option disabled hidden selected>Please select</option>
                       <option value="1">A</option>
                       <option value="2">B</option>
                       <option value="3">C</option>
