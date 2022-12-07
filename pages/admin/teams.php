@@ -9,7 +9,7 @@ include_once '../../includes/admin/head.php';
         <!-- Content -->
         <div class="tableContainer m-4">
         <div class="d-flex justify-content-end m-3">
-            <button href="#modal-product" data-bs-toggle="modal" class="btn btn-primary d-flex "><i class="bi bi-plus-circle-dotted me-2"></i>Add Product</button>
+            <button href="#modal-product" data-bs-toggle="modal" class="btn btn-primary d-flex "><i class="bi bi-plus-circle-dotted me-2"></i>Add Team</button>
         </div>
         
       <table class="table table-dark table-hover table-striped "  id="myTable">
@@ -49,7 +49,7 @@ include_once '../../includes/admin/head.php';
           <div class="modal-content">
             <form action="" method="POST" id="form" enctype="multipart/form-data" data-parsley-validate>
               <div class="modal-header">
-                <h5 class="modal-title">Add Product</h5>
+                <h5 class="modal-title">Add Team</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
               </div>
               <div class="modal-body">
@@ -82,7 +82,7 @@ include_once '../../includes/admin/head.php';
                   </div>
 
                   <div class="mb-0">
-                    <label class="col-md-4 control-label mb-1" for="filebutton">Product Image</label>
+                    <label class="col-md-4 control-label mb-1" for="filebutton">Team Image</label>
                     <div class="col-md-4">
                     <input id="picture" name="picture" class="input-file" type="file">
                     </div>
