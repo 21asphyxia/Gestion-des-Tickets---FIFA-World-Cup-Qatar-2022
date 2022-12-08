@@ -1,5 +1,11 @@
 <?php
 include_once '../../includes/admin/head.php';
+include "../../controllers/StadiumsController.php";
+
+
+$stadiums = new controllerStade();
+
+$data = $stadiums->getStads();
 ?>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css">
 <body class="g-sidenav-show bg-gray-100">
@@ -38,8 +44,24 @@ include_once '../../includes/admin/head.php';
                 </div>
             </td>
           </tr>
-
-     
+          <?php
+            foreach($data as $stads){
+              echo "
+                <tr class='text-center'>
+                  <!-- <th class='align-middle' scope='row'>1</th> -->
+                  <td class='align-middle'>$stads[image]</td>
+                  <td class='align-middle'>$stads[name]</td>
+                  <td class='align-middle' >$stads[location]</td>
+                  <td class='align-middle' >$stads[capacity]</td>
+                  <td class='align-middle' >
+                      <div class='d-flex flex-wrap justify-content-around'>
+                          <a href='#' class='btn btn-warning d-flex'></i>Update</a>
+                          <a href='#' class='btn btn-danger d-flex'></i>Delete</a>
+                      </div>
+                  </td>
+                </tr>";
+            }
+          ?>
 
         </tbody>
       </table>
@@ -47,7 +69,7 @@ include_once '../../includes/admin/head.php';
       <div class="modal fade" id="modal-product" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true" >
         <div class="modal-dialog">
           <div class="modal-content">
-            <form action="" method="POST" id="form" enctype="multipart/form-data" data-parsley-validate>
+            <form action="../../controllers/StadiumsController.php" method="POST" id="form" enctype="multipart/form-data" data-parsley-validate>
               <div class="modal-header">
                 <h5 class="modal-title">Add Product</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
