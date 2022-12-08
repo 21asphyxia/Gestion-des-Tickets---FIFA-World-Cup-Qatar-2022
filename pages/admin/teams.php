@@ -1,4 +1,5 @@
 <?php
+$pagetitle='teams';
 include_once '../../includes/admin/head.php';
 ?>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css">
@@ -7,6 +8,7 @@ include_once '../../includes/admin/head.php';
     <main class="main-content position-relative max-height-vh-100 h-100 border-radius-lg ">
         <?php include_once '../../includes/admin/navbar.php';?>
         <!-- Content -->
+            <!-- TABLEAU -->
         <div class="tableContainer m-4">
         <div class="d-flex justify-content-end m-3">
             <button href="#modal-product" data-bs-toggle="modal" class="btn btn-primary d-flex "><i class="bi bi-plus-circle-dotted me-2"></i>Add Team</button>
@@ -15,57 +17,51 @@ include_once '../../includes/admin/head.php';
       <table class="table table-dark table-hover table-striped "  id="myTable">
         <thead>
           <tr>
-            <th class="text-center" scope="col">Id</th>
             <th class="text-center" scope="col">Flag</th>
             <th class="text-center" scope="col">Team</th>
             <th class="text-center" scope="col">Country</th>
-            <th class="text-center" scope="col">Coach</th>
             <th class="text-center" scope="col">Groups</th>
             <th class="text-center" scope="col">Operations</th>
           </tr>
         </thead>
         <tbody>
-
+        <?php 
+            include '../../models/TeamsModal.php';
+            $b = new Teams();
+            $b->select("teams","*");
+            $result = $b->sql;
+        ?>
+            <?php while ($row = $result->fetch(PDO::FETCH_ASSOC)) { ?>
           <tr class="text-center">
-            <th class="align-middle" scope="row">1</th>
             <td class="align-middle"><img class="flagImage" src="../../assets/img/Flag-Senegal.webp" alt="image" width="50px"></td>
             <td class="align-middle"><img class="flagImage" src="../../assets/img/Flag-Senegal.webp" alt="image" width="50px"></td>
-            <td class="align-middle">Senegal</td>
-            <td class="align-middle" >Aliou Cissé</td>
-            <td class="align-middle" >A</td>
+            <td class="align-middle"><?php echo $row['name']; ?></td>
+            <td class="align-middle" ><?php echo $row['team_group']; ?></td>
             <td class="align-middle" >
                 <div class="d-flex flex-wrap justify-content-around">
-                    <a href="#" class="btn btn-warning d-flex"></i>Update</a>
-                    <a href="#" class="btn btn-danger d-flex"></i>Delete</a>
+                    <a href="update.php?id=<?php echo $row['id']; ?>" type="button" class="btn btn-warning d-flex"></i>Update</a>
+                    <a href="delete.php?id=<?php echo $row['id']; ?>" type="button" class="btn btn-danger d-flex"></i>Delete</a>
                 </div>
             </td>
           </tr>
-
-     
-
+          <?php } ?>
         </tbody>
       </table>
               <!-- MODAL -->
       <div class="modal fade" id="modal-product" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true" >
         <div class="modal-dialog">
           <div class="modal-content">
-            <form action="" method="POST" id="form" enctype="multipart/form-data" data-parsley-validate>
+            <form action="../../controllers/TeamsController.php" method="POST" id="form" enctype="multipart/form-data" data-parsley-validate>
               <div class="modal-header">
                 <h5 class="modal-title">Add Team</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
               </div>
               <div class="modal-body">
                   <!-- HIDDEN INPUT  -->
-                  <input type="hidden" name="product-id">
-                  
+ 
                   <div class="mb-3">
                     <label class="form-label" >Country</label>
                     <input name="country" type="text" class="form-control" id="country" required/>
-                  </div>
-
-                  <div class="mb-3">
-                    <label class="form-label" >Coach</label>
-                    <input name="coach" type="text" class="form-control" id="coach" required/>
                   </div>
 
                   <div class="mb-3">
@@ -83,10 +79,16 @@ include_once '../../includes/admin/head.php';
                     </select>
                   </div>
 
-                  <div class="mb-0">
+                  <div class="mb-3">
                     <label class="col-md-4 control-label mb-1" for="filebutton">Team Image</label>
                     <div class="col-md-4">
-                    <input id="picture" name="picture" class="input-file" type="file">
+                    <input id="teamImage" name="teamImage" class="input-file" type="file">
+                    </div>
+                  </div>
+                  <div class="mb-0">
+                    <label class="col-md-4 control-label mb-1" for="filebutton">Flag Image</label>
+                    <div class="col-md-4">
+                    <input id="flagImage" name="flagImage" class="input-file" type="file">
                     </div>
                   </div>
                 
