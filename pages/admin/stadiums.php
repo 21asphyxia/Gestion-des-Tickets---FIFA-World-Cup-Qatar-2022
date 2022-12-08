@@ -22,47 +22,46 @@ $data = $stadiums->getStads();
         <thead>
           <tr>
             <!-- <th class="text-center" scope="col">Id</th> -->
-            <th class="text-center" scope="col">Image</th>
             <th class="text-center" scope="col">Name</th>
+            <th class="text-center" scope="col">Image</th>
             <th class="text-center" scope="col">Location</th>
             <th class="text-center" scope="col">Capacity</th>
             <th class="text-center" scope="col">Operations</th>
           </tr>
         </thead>
         <tbody>
-
-          <tr class="text-center">
+          <!-- <tr class="text-center"> -->
             <!-- <th class="align-middle" scope="row">1</th> -->
-            <td class="align-middle"><img class="flagImage" src="../../assets/img/Flag-Senegal.webp" alt="image" width="50px"></td>
+            <!-- <td class="align-middle"><img class="flagImage" src="../../assets/img/Flag-Senegal.webp" alt="image" width="50px"></td>
             <td class="align-middle">Senegal</td>
             <td class="align-middle" >Aliou Cissé</td>
             <td class="align-middle" >40000</td>
             <td class="align-middle" >
                 <div class="d-flex flex-wrap justify-content-around">
-                    <a href="#" class="btn btn-warning d-flex"></i>Update</a>
-                    <a href="#" class="btn btn-danger d-flex"></i>Delete</a>
+                    <a href="#" name="" class="btn btn-warning d-flex"></i>Update</a>
+                    <a href="#"  class="btn btn-danger d-flex"></i>Delete</a>
                 </div>
             </td>
-          </tr>
+          </tr> -->
           <?php
             foreach($data as $stads){
               echo "
                 <tr class='text-center'>
                   <!-- <th class='align-middle' scope='row'>1</th> -->
-                  <td class='align-middle'>$stads[image]</td>
                   <td class='align-middle'>$stads[name]</td>
+                  <td class='align-middle'>$stads[image]</td>
                   <td class='align-middle' >$stads[location]</td>
                   <td class='align-middle' >$stads[capacity]</td>
                   <td class='align-middle' >
                       <div class='d-flex flex-wrap justify-content-around'>
                           <a href='#' class='btn btn-warning d-flex'></i>Update</a>
-                          <a href='#' class='btn btn-danger d-flex'></i>Delete</a>
+                          <a href='../../controllers/StadiumsController.php?deleteStad=$stads[id]' class='btn btn-danger d-flex'></i>Delete</a>
                       </div>
                   </td>
                 </tr>";
             }
           ?>
-
+              
         </tbody>
       </table>
               <!-- MODAL -->
@@ -91,21 +90,6 @@ $data = $stadiums->getStads();
                     <label class="form-label" >Capacity</label>
                     <input name="capacity" type="text" class="form-control" id="capacity" required/>
                   </div>
-
-                  <!-- <div class="mb-3">
-                    <label class="form-label">Groups</label>
-                    <select class="form-select" id="groups" name="groups" required>
-                      <option hidden>Please select</option>
-                      <option value="1">A</option>
-                      <option value="2">B</option>
-                      <option value="3">C</option>
-                      <option value="4">D</option>
-                      <option value="5">E</option>
-                      <option value="6">F</option>
-                      <option value="7">G</option>
-                      <option value="8">H</option>
-                    </select>
-                  </div> -->
 
                   <div class="mb-0">
                     <label class="col-md-4 control-label mb-1" for="filebutton">Stadium Image</label>
