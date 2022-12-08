@@ -30,6 +30,26 @@ new Chart("myChart", {
 // END SALAH
 
 // START HAJJOU
+// function editStadiums(id){
+//   console.log(id);
+// }
+// function editStadiums(id){
+//   console.log(id);
+//   $.ajax({
+//     type: "POST",
+//     url: '../../controllers/StadiumsController.php',
+//     data: {getStad: id},
+//     success: function( response ) {
+//       obj = JSON.parse(response);
+//       document.querySelector('#nameStadiums').value = obj.name;
+//       document.querySelector('#location').value = obj.location;
+//       document.querySelector('#capacity').value = obj.capacity;
+//       document.querySelector('#stadiumPicture').value = obj.image;
+      
+//     },					
+//   });
+  
+// }
 // END HAJJOU
 
 // START YOUNESS

@@ -15,7 +15,7 @@ $data = $stadiums->getStads();
         <!-- Content -->
         <div class="tableContainer m-4">
         <div class="d-flex justify-content-end m-3">
-            <button href="#modal-product" data-bs-toggle="modal" class="btn btn-primary d-flex "><i class="bi bi-plus-circle-dotted me-2"></i>Add Product</button>
+            <button href="#modal-stadiums" data-bs-toggle="modal" class="btn btn-primary d-flex "><i class="bi bi-plus-circle-dotted me-2"></i>Add Product</button>
         </div>
         
       <table class="table table-dark table-hover table-striped "  id="myTable">
@@ -54,7 +54,7 @@ $data = $stadiums->getStads();
                   <td class='align-middle' >$stads[capacity]</td>
                   <td class='align-middle' >
                       <div class='d-flex flex-wrap justify-content-around'>
-                          <a href='#' class='btn btn-warning d-flex'></i>Update</a>
+                          <button type='button' data-bs-toggle='modal' data-bs-target='#modal-stadiums' class='btn btn-warning d-flex' onclick='editStadiums($stads[id])'>Update</button>
                           <a href='../../controllers/StadiumsController.php?deleteStad=$stads[id]' class='btn btn-danger d-flex'></i>Delete</a>
                       </div>
                   </td>
@@ -65,7 +65,7 @@ $data = $stadiums->getStads();
         </tbody>
       </table>
               <!-- MODAL -->
-      <div class="modal fade" id="modal-product" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true" >
+      <div class="modal fade" id="modal-stadiums" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true" >
         <div class="modal-dialog">
           <div class="modal-content">
             <form action="../../controllers/StadiumsController.php" method="POST" id="form" enctype="multipart/form-data" data-parsley-validate>
@@ -75,7 +75,7 @@ $data = $stadiums->getStads();
               </div>
               <div class="modal-body">
                   <!-- HIDDEN INPUT  -->
-                  <input type="hidden" name="product-id">
+                  <input type="hidden" name="stadium-id" id="StadiumId">
                   
                   <div class="mb-3">
                     <label class="form-label" >Name</label>
@@ -111,6 +111,27 @@ $data = $stadiums->getStads();
     </div>
 
     </main>
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
+      <script>
+        function editStadiums(id){
+          console.log(id);
+					$.ajax({
+						type: "POST",
+						url: '../../controllers/StadiumsController.php',
+						data: {getStad: id},
+						success: function( response ) {
+              obj = JSON.parse(response);
+              document.querySelector('#StadiumId').value = obj.id;
+              document.querySelector('#nameStadiums').value = obj.name;
+              document.querySelector('#location').value = obj.location;
+              document.querySelector('#capacity').value = obj.capacity;
+              document.querySelector('#stadiumPicture').value = obj.image;
+							
+						},					
+					});
+          
+        }
+      </script>
 </body>
 </html>
 <?php include_once '../../includes/admin/corejs.php'; ?>
