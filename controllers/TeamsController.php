@@ -48,7 +48,6 @@
     $a = new Teams();
     
 
-
     $a->select("teams","*","id='$id'");
     $result = $a->sql->fetch(PDO::FETCH_ASSOC);
 
@@ -59,17 +58,14 @@
         unlink("../assets/img/".$result['team_image']);
     }
 
-
-
-
     $a->delete('teams',"id='$id'");
     if ($a == true) {
         header('location:../pages/admin/teams.php');
     }
-
     }
 
-
+    //UPDATE FUNCTION
+    
 
     
 

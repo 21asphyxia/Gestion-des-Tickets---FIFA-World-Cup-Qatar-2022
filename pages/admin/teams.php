@@ -11,7 +11,7 @@ include_once '../../includes/admin/head.php';
             <!-- TABLEAU -->
         <div class="tableContainer m-4">
         <div class="d-flex justify-content-end m-3">
-            <button href="#modal-product" data-bs-toggle="modal" class="btn btn-primary d-flex "><i class="bi bi-plus-circle-dotted me-2"></i>Add Team</button>
+            <button href="#modal-teams" data-bs-toggle="modal" class="btn btn-primary d-flex "><i class="bi bi-plus-circle-dotted me-2"></i>Add Team</button>
         </div>
         
       <table class="table table-dark table-hover table-striped "  id="myTable">
@@ -40,7 +40,7 @@ include_once '../../includes/admin/head.php';
             <td class="align-middle" ><?php echo $row['team_group']; ?></td>
             <td class="align-middle" >
                 <div class="d-flex flex-wrap justify-content-around">
-                    <a href="../../controllers/TeamsController.php?updateId=<?php echo $row['id']; ?>" type="button" class="btn btn-warning d-flex" ></i>Update</a>
+                    <a href="teams.php?updateId=<?php echo $row['id']; ?>" type="button" class="btn btn-warning d-flex" ></i>Update</a>
                     <a href="../../controllers/TeamsController.php?deleteId=<?php echo $row['id']; ?>" type="button" class="btn btn-danger d-flex" ></i>Delete</a>
                 </div>
             </td>
@@ -50,7 +50,7 @@ include_once '../../includes/admin/head.php';
         </tbody>
       </table>
               <!-- MODAL -->
-      <div class="modal fade" id="modal-product" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true" >
+      <div class="modal fade" id="modal-teams" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true" >
         <div class="modal-dialog">
           <div class="modal-content">
             <form action="../../controllers/TeamsController.php" method="POST" id="form" enctype="multipart/form-data" data-parsley-validate>
@@ -105,10 +105,23 @@ include_once '../../includes/admin/head.php';
         </div>
       </div>
     </div>
-
+          
     </main>
+    
 </body>
+
 </html>
+
 <?php include_once '../../includes/admin/corejs.php'; ?>
+<script>
+    <?php if (isset($_GET['updateId'])) { ?>
+      window.onload = function() {
+        $("#save").hide();
+        $("#update").show();
+        $("#modal-teams").modal("show");
+      };
+  <?php }
+    ?>
+  </script>
 
 
