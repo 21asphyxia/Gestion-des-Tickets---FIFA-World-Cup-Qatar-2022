@@ -1,5 +1,7 @@
 <?php
+if(isset($pagetitle)){
 if($pagetitle=='teams'){require '../../config/database.php';}
+else{require '../config/database.php';}}
 else{require '../config/database.php';}
 class Teams extends Database
 {

@@ -25,6 +25,7 @@ include_once '../../includes/admin/head.php';
           </tr>
         </thead>
         <tbody>
+
         <?php 
             include '../../models/TeamsModal.php';
             $b = new Teams();
@@ -33,18 +34,19 @@ include_once '../../includes/admin/head.php';
         ?>
             <?php while ($row = $result->fetch(PDO::FETCH_ASSOC)) { ?>
           <tr class="text-center">
-            <td class="align-middle"><img class="flagImage" src="../../assets/img/Flag-Senegal.webp" alt="image" width="50px"></td>
-            <td class="align-middle"><img class="flagImage" src="../../assets/img/Flag-Senegal.webp" alt="image" width="50px"></td>
+            <td class="align-middle"><img class="" src="../../assets/img/<?php echo $row['flag'] ?>" alt="image" width="50px"></td>
+            <td class="align-middle"><img class="" src="../../assets/img/<?php echo $row['team_image'] ?>" alt="image" width="50px"></td>
             <td class="align-middle"><?php echo $row['name']; ?></td>
             <td class="align-middle" ><?php echo $row['team_group']; ?></td>
             <td class="align-middle" >
                 <div class="d-flex flex-wrap justify-content-around">
-                    <a href="update.php?id=<?php echo $row['id']; ?>" type="button" class="btn btn-warning d-flex"></i>Update</a>
-                    <a href="delete.php?id=<?php echo $row['id']; ?>" type="button" class="btn btn-danger d-flex"></i>Delete</a>
+                    <a href="../../controllers/TeamsController.php?updateId=<?php echo $row['id']; ?>" type="button" class="btn btn-warning d-flex" ></i>Update</a>
+                    <a href="../../controllers/TeamsController.php?deleteId=<?php echo $row['id']; ?>" type="button" class="btn btn-danger d-flex" ></i>Delete</a>
                 </div>
             </td>
           </tr>
           <?php } ?>
+
         </tbody>
       </table>
               <!-- MODAL -->
@@ -68,27 +70,27 @@ include_once '../../includes/admin/head.php';
                     <label class="form-label">Groups</label>
                     <select class="form-select" id="groups" name="groups" required>
                       <option disabled hidden selected>Please select</option>
-                      <option value="1">A</option>
-                      <option value="2">B</option>
-                      <option value="3">C</option>
-                      <option value="4">D</option>
-                      <option value="5">E</option>
-                      <option value="6">F</option>
-                      <option value="7">G</option>
-                      <option value="8">H</option>
+                      <option value="A">A</option>
+                      <option value="B">B</option>
+                      <option value="C">C</option>
+                      <option value="D">D</option>
+                      <option value="E">E</option>
+                      <option value="F">F</option>
+                      <option value="G">G</option>
+                      <option value="H">H</option>
                     </select>
                   </div>
-
-                  <div class="mb-3">
-                    <label class="col-md-4 control-label mb-1" for="filebutton">Team Image</label>
-                    <div class="col-md-4">
-                    <input id="teamImage" name="teamImage" class="input-file" type="file">
-                    </div>
-                  </div>
+                  
                   <div class="mb-0">
                     <label class="col-md-4 control-label mb-1" for="filebutton">Flag Image</label>
                     <div class="col-md-4">
                     <input id="flagImage" name="flagImage" class="input-file" type="file">
+                    </div>
+                  </div>
+                  <div class="mb-3">
+                    <label class="col-md-4 control-label mb-1" for="filebutton">Team Image</label>
+                    <div class="col-md-4">
+                    <input id="teamImage" name="teamImage" class="input-file" type="file">
                     </div>
                   </div>
                 
