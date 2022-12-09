@@ -11,7 +11,7 @@ include_once '../../includes/admin/head.php';
             <!-- TABLEAU -->
         <div class="tableContainer m-4">
         <div class="d-flex justify-content-end m-3">
-            <button href="#modal-teams" data-bs-toggle="modal" class="btn btn-primary d-flex "><i class="bi bi-plus-circle-dotted me-2"></i>Add Team</button>
+            <button href="#modal-teams" data-bs-toggle="modal" class="btn btn-primary d-flex "  onclick="resetForm()"><i class="bi bi-plus-circle-dotted me-2" ></i>Add Team</button>
         </div>
         
       <table class="table table-dark table-hover table-striped "  id="myTable">
@@ -34,8 +34,8 @@ include_once '../../includes/admin/head.php';
         ?>
             <?php while ($row = $result->fetch(PDO::FETCH_ASSOC)) { ?>
           <tr class="text-center">
-            <td class="align-middle"><img class="" src="../../assets/img/<?php echo $row['flag'] ?>" alt="image" width="50px"></td>
-            <td class="align-middle"><img class="" src="../../assets/img/<?php echo $row['team_image'] ?>" alt="image" width="50px"></td>
+            <td class="align-middle"><img class="" src="../../assets/img/<?php echo $row['flag'] ?>" alt="Flag" width="50px"></td>
+            <td class="align-middle"><img class="" src="../../assets/img/<?php echo $row['team_image'] ?>" alt="Team" width="50px"></td>
             <td class="align-middle"><?php echo $row['name']; ?></td>
             <td class="align-middle" ><?php echo $row['team_group']; ?></td>
             <td class="align-middle" >
@@ -49,6 +49,15 @@ include_once '../../includes/admin/head.php';
 
         </tbody>
       </table>
+
+
+      <?php 
+          if(isset($_GET['updateId'])){
+            $b->select("teams","*","id='".$_GET['updateId']."'");
+            $result = $b->sql;
+            $modalRow = $result->fetch(PDO::FETCH_ASSOC);
+          }
+        ?>
               <!-- MODAL -->
       <div class="modal fade" id="modal-teams" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true" >
         <div class="modal-dialog">
@@ -60,24 +69,24 @@ include_once '../../includes/admin/head.php';
               </div>
               <div class="modal-body">
                   <!-- HIDDEN INPUT  -->
- 
+                  <input type="hidden" value="<?php if(isset($modalRow)) echo $modalRow['id'] ?>" name="team-id">
                   <div class="mb-3">
                     <label class="form-label" >Country</label>
-                    <input name="country" type="text" class="form-control" id="country" required/>
+                    <input name="country" type="text" class="form-control" id="country" value="<?php if(isset($modalRow)) echo $modalRow['name']; ?>" required/>
                   </div>
 
                   <div class="mb-3">
                     <label class="form-label">Groups</label>
                     <select class="form-select" id="groups" name="groups" required>
                       <option disabled hidden selected>Please select</option>
-                      <option value="A">A</option>
-                      <option value="B">B</option>
-                      <option value="C">C</option>
-                      <option value="D">D</option>
-                      <option value="E">E</option>
-                      <option value="F">F</option>
-                      <option value="G">G</option>
-                      <option value="H">H</option>
+                      <option <?php if(isset($modalRow)){ echo ($modalRow['team_group']=='A')  ?  'selected' : '';}?> value="A">A</option>
+                      <option <?php if(isset($modalRow)){ echo ($modalRow['team_group']=='B')  ?  'selected' : '';}?> value="B">B</option>
+                      <option <?php if(isset($modalRow)){ echo ($modalRow['team_group']=='C')  ?  'selected' : '';}?> value="C">C</option>
+                      <option <?php if(isset($modalRow)){ echo ($modalRow['team_group']=='D')  ?  'selected' : '';}?> value="D">D</option>
+                      <option <?php if(isset($modalRow)){ echo ($modalRow['team_group']=='E')  ?  'selected' : '';}?> value="E">E</option>
+                      <option <?php if(isset($modalRow)){ echo ($modalRow['team_group']=='F')  ?  'selected' : '';}?> value="F">F</option>
+                      <option <?php if(isset($modalRow)){ echo ($modalRow['team_group']=='G')  ?  'selected' : '';}?> value="G">G</option>
+                      <option <?php if(isset($modalRow)){ echo ($modalRow['team_group']=='H')  ?  'selected' : '';}?> value="H">H</option>
                     </select>
                   </div>
                   
@@ -105,7 +114,6 @@ include_once '../../includes/admin/head.php';
         </div>
       </div>
     </div>
-          
     </main>
     
 </body>
