@@ -15,7 +15,7 @@ $data = $stadiums->getStads();
         <!-- Content -->
         <div class="tableContainer m-4">
         <div class="d-flex justify-content-end m-3">
-            <button href="#modal-stadiums" data-bs-toggle="modal" class="btn btn-primary d-flex "><i class="bi bi-plus-circle-dotted me-2"></i>Add Product</button>
+            <button href="#modal-stadiums" data-bs-toggle="modal" class="btn btn-primary d-flex "><i class="bi bi-plus-circle-dotted me-2"></i>Add Stadium</button>
         </div>
         
       <table class="table table-dark table-hover table-striped "  id="myTable">
@@ -49,7 +49,7 @@ $data = $stadiums->getStads();
                 <tr class='text-center'>
                   <!-- <th class='align-middle' scope='row'>1</th> -->
                   <td class='align-middle'>$stads[name]</td>
-                  <td class='align-middle'>$stads[image]</td>
+                  <td class='align-middle'><img src='../../assets/upload/$stads[image].' width='90'></td>
                   <td class='align-middle' >$stads[location]</td>
                   <td class='align-middle' >$stads[capacity]</td>
                   <td class='align-middle' >
@@ -70,7 +70,7 @@ $data = $stadiums->getStads();
           <div class="modal-content">
             <form action="../../controllers/StadiumsController.php" method="POST" id="form" enctype="multipart/form-data" data-parsley-validate>
               <div class="modal-header">
-                <h5 class="modal-title">Add Product</h5>
+                <h5 class="modal-title">Add Stadium</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
               </div>
               <div class="modal-body">
@@ -125,7 +125,6 @@ $data = $stadiums->getStads();
               document.querySelector('#nameStadiums').value = obj.name;
               document.querySelector('#location').value = obj.location;
               document.querySelector('#capacity').value = obj.capacity;
-              document.querySelector('#stadiumPicture').value = obj.image;
 							
 						},					
 					});

@@ -4,18 +4,14 @@
 class Stadiums extends Database{
    
     public $id;
-    protected function addStadiums($name,$location,$capacity,$pic){
-       
-        // $name      =$_POST['nameStadiums'];
-        // $capacity  =$_POST['capacity'];
-        // $location  =$_POST['location'];
-        // $pic       =$_FILES['stadiumPicture']['name'];
-        // $image     =$_FILES['stadiumPicture']['tmp_name'];
-
-        $stmt = $this->con->prepare("INSERT INTO `stadiums`(`name`, `location`, `capacity`, `image`) VALUES (?,?,?,?)");
-        $stmt->execute([$name,$location,$capacity,$pic]);
-        // move_uploaded_file($image, '../assets/img/upload_img/'.$pic);
-
+    protected function addStadiums($name,$location,$capacity,$pic=NULL){
+        if ($pic==NULL){
+            $stmt = $this->con->prepare("INSERT INTO `stadiums`(`name`, `location`, `capacity`) VALUES (?,?,?)");
+            $stmt->execute([$name,$location,$capacity]);
+        } else{
+            $stmt = $this->con->prepare("INSERT INTO `stadiums`(`name`, `location`, `capacity`, `image`) VALUES (?,?,?,?)");
+            $stmt->execute([$name,$location,$capacity,$pic]);
+        }
     }
 
     public function getStads(){
@@ -45,11 +41,15 @@ class Stadiums extends Database{
         $res = $stmt->fetch();
         return $id;
     }
-    public function update($name , $location , $capacity , $image , $id){
-        // $id = $this->id;
-        // UPDATE `stadiums` SET `id`='[value-1]',`name`='[value-2]',`location`='[value-3]',`capacity`='[value-4]',`image`='[value-5]' WHERE 1
-        $stmt = $this->con->prepare("UPDATE `stadiums` SET `name`=?,`location`=?,`capacity`=?,`image`=? WHERE id = ?");
-        $stmt->execute([$name , $location , $capacity , $image , $id]);
+    public function update($name , $location , $capacity , $id , $image=NULL){
+        if ($image!=NULL){
+            $stmt = $this->con->prepare("UPDATE `stadiums` SET `name`=?,`location`=?,`capacity`=?,`image`=? WHERE id = ?");
+            $stmt->execute([$name , $location , $capacity , $image , $id]);
+        }
+        else{
+            $stmt = $this->con->prepare("UPDATE `stadiums` SET `name`=?,`location`=?,`capacity`=? WHERE id = ?");
+            $stmt->execute([$name , $location , $capacity , $id]);
+        }
         $res = $stmt->fetch();
         return $res;
     }
