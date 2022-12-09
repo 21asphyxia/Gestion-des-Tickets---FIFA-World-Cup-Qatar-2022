@@ -64,7 +64,7 @@ include_once '../../includes/admin/head.php';
           <div class="modal-content">
             <form action="../../controllers/TeamsController.php" method="POST" id="form" enctype="multipart/form-data" data-parsley-validate>
               <div class="modal-header">
-                <h5 class="modal-title">Add Team</h5>
+                <h5 class="modal-title" id="modal-title"><?php if(isset($_GET['updateId'])){echo 'Update';}    else { echo 'Add';}?> Team</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
               </div>
               <div class="modal-body">
@@ -105,7 +105,7 @@ include_once '../../includes/admin/head.php';
                 
               </div>
               <div class="modal-footer">
-                <button data-bs-dismiss="modal" class="btn btn-secondary" >Cancel</button>
+                <button type="button" data-bs-dismiss="modal" class="btn btn-secondary" >Cancel</button>
                 <button type="submit" name="save" class="btn btn-primary task-action-btn" id="save">Save</button>
                 <button type="submit" name="update" class="btn btn-warning task-action-btn" id="update">Update</button>
               </div>

@@ -65,7 +65,7 @@
     }
 
 
-    
+
     //UPDATE FUNCTION
     if (isset($_POST['update'])) {
         $country = $_POST['country'];
@@ -101,7 +101,7 @@
         }
         //ADD TEAM IMAGE
         $a = new Teams();
-        if(empty($flag)&&empty($team) ){
+        if(empty($flag) && empty($team) ){
             $a->update('teams',['name'=>$country,'team_group'=>$groups],$id);
             }elseif(empty($flag)){
                 $a->update('teams',['name'=>$country,'team_group'=>$groups,'team_image'=>$team],$id);

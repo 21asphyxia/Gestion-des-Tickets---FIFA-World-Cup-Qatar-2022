@@ -24,8 +24,7 @@ class Teams extends Database
 
         $sql="UPDATE  $table SET " . implode(',', $args);
 
-        $sql .=" WHERE $id";
-
+        $sql .=" WHERE id=$id";
         $result = $this->con->query($sql);
     }
 
