@@ -1,56 +1,85 @@
-<?php
-require_once dirname(__DIR__).'/config/database.php';
-require_once dirname(__DIR__).'/models/StadiumsModel.php';
+<?php 
+    //INCLUDES
+    require(__DIR__.'/../models/MatchesModel.php');
 
 
-class controllerStade extends Stadiums{
- public function AddStade(){
-        if($_SERVER['REQUEST_METHOD']=='POST'){
-            if(isset($_REQUEST['save'])){
-                // extract([$_POST]);
-                $name      =$_POST['nameStadiums'];
-                $capacity  =$_POST['capacity'];
-                $location  =$_POST['location'];
-                $pic       =$_FILES['stadiumPicture']['name'];
-                $image     =$_FILES['stadiumPicture']['tmp_name'];
+    //READ FUNCTION
+    $readMatches = new MatchesModel();
+    $matches = $readMatches->getMatches();
 
-                $result =$this ->addStadiums($name,$location,$capacity,$pic);
-                // $stadium = new Stadiums();
-                // $stadium->addStadiums();
-                // header("Location:../pages/admin/stadiums.php");
-
-                header("Location:../pages/admin/stadiums.php") ;
-
+    //SAVE FUNCTION
+    if (isset($_POST['save'])) {
+        //ADD FLAG IMAGE
+        foreach($_FILES as $key => $value){
+            //Upload img
+            //-----------------------------------------------
+            
+            $tmp_picture_name     = $value['tmp_name'];
+            //unique id img
+            $new_unique_name      = uniqid('',true);
+            //
+            $basename = $value['name'];
+            $image = $new_unique_name . $basename;
+            //check picture
+            if(!empty($value['name'])){
+                $distination_file = '../assets/img/'.$image;
+            }
+            
+            //Func upload picture
+            move_uploaded_file($tmp_picture_name,$distination_file);
+            if($key=="flagImage"){
+                $flag=$image;
+            }else{
+                $team=$image;
             }
         }
-    }
-    function getStads(){
-        $stadium = new Stadiums();
-        return $stadium->getStads();
-     }
+        //ADD TEAM IMAGE
+        echo "first";
+        $match = new MatchesModel();
 
-     function deletstad(){
-        if(isset($_POST['deleteStad'])) {
-            $stadium = new Stadiums();
-            return $stadium->deleteStadium();
+        if ($match->addMatch()) {
+            header('location:../pages/admin/teams.php');
         }
-     }
- 
+        else{
+            echo "Error in saving";
+            die();
+        }
+    }
 
-}
+    //DELETE FUNCTION
+    if (isset($_GET['deleteMatch'])){
+        $match = new MatchesModel();
+        $result = $match->getMatchById($_GET['deleteMatch'])->fetch(PDO::FETCH_ASSOC);
 
-$stadium = new controllerStade();
-$stadium->AddStade();
+        if ($result['image'] != '' ) {
+            unlink("../assets/img/".$result['image']);
+        }
+
+        if ($match->deleteMatch($_GET['deleteMatch'])) {
+            header('location:../pages/admin/teams.php');
+        }
+        else{
+            echo "Error in deleting";
+            die();
+        }
+    }
+
+    //UPDATE FUNCTION
+    if(isset($_GET['updateId'])){
+        $result = $readMatches->getMatchById($_GET['updateId']);
+        $row = $result->fetch(PDO::FETCH_ASSOC);
+    }
 
 
 
-
-
-// dirname(__DIR__).'/pages/admin/stadiums.php';
-
-  
-
-
-
-
+    if (isset($_POST['update'])) {
+        $match = new MatchesModel();
+        if ($match->updateMatch($_POST['match-id'])) {
+            header('location:../pages/admin/teams.php');
+        }
+        else{
+            echo "Error in updating";
+            die();
+        }
+    }
 ?>

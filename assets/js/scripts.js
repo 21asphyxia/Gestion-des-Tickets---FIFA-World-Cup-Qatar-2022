@@ -55,4 +55,29 @@ $(function() {
     });
   });
 }
+
+function initTaskForm() {
+  document.getElementById("modal-title").innerHTML = "Add Match";
+  // Clear task form from data
+  document.getElementById("first-team").value = "";
+  document.getElementById("second-team").value = "";
+  document.getElementById("stadium").value = "";
+  document.getElementById("date").value = "";
+  
+  // Hide all action buttons
+  document.getElementById('save-button').classList.remove('d-none');
+  document.getElementById("update-button").classList.add("d-none");
+}
+
+function createMatch(){
+  if (window.location.pathname.startsWith('/Gestion-des-Tickets---FIFA-World-Cup-Qatar-2022/pages/admin/played-matches.php')) {
+
+    initTaskForm();
+    // Ouvrir modal form
+    $(document).ready(function() {
+      $('#modal').modal('show');
+    });
+
+  }
+}
 // END MOUAD
