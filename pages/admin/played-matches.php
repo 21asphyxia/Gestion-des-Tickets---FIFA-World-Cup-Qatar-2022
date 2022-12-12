@@ -68,6 +68,10 @@ include_once '../../includes/admin/head.php';
                   <label for="first-team" class="form-label">First team</label>
                   <select class="form-select" id="first-team" name="team_1" required>
                     <option disabled hidden value="">Please select</option>
+                    <?php foreach ($readTeams as $key => $value) {
+                    ?>
+                    <option value="<?= $value['name']; ?>"><?= $value['name']; ?></option>
+                    <?php } ?>
                   </select>
                 </div>
 
@@ -75,6 +79,10 @@ include_once '../../includes/admin/head.php';
                   <label for="second-team" class="form-label">Second team</label>
                   <select class="form-select" id="second-team" name="team_2" required>
                     <option disabled hidden value="">Please select</option>
+                    <?php foreach ($readTeams as $key => $value) {
+                    ?>
+                    <option value="<?= $value['name']; ?>"><?= $value['name']; ?></option>
+                    <?php } ?>
                   </select>
                 </div>
 
@@ -82,6 +90,10 @@ include_once '../../includes/admin/head.php';
                   <label for="stadium" class="form-label">Stadium</label>
                   <select class="form-select" id="stadium" name="stadium" required>
                     <option disabled hidden value="">Please select</option>
+                    <?php foreach ($readStadiums as $key => $value) {
+                    ?>
+                    <option value="<?= $value['name']; ?>"><?= $value['name']; ?></option>
+                    <?php } ?>
                   </select>
                 </div>
 

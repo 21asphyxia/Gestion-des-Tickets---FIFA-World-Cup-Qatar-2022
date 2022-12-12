@@ -1,4 +1,5 @@
 <?php
+$adminTitle = "Stadiums";
 include_once '../../includes/admin/head.php';
 include "../../controllers/StadiumsController.php";
 
