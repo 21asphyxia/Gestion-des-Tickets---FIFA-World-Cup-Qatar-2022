@@ -24,6 +24,16 @@ new Chart("myChart", {
 });
 }
 
+function resetForm(){
+  if (window.location.pathname.startsWith('/Gestion-des-Tickets---FIFA-World-Cup-Qatar-2022/pages/admin/teams.php')) {
+    console.log("1");
+    document.getElementById("modal-title").innerHTML = "Add Team";
+    document.getElementById("country").value = "";
+    document.getElementById("groups").value = "";
+    $("#save").show();
+    $("#update").hide();
+  }
+}
 
 
 

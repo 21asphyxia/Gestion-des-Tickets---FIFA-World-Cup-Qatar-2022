@@ -1,4 +1,5 @@
 <?php
+$pagetitle='teams';
 include_once '../../includes/admin/head.php';
 ?>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css">
@@ -7,90 +8,104 @@ include_once '../../includes/admin/head.php';
     <main class="main-content position-relative max-height-vh-100 h-100 border-radius-lg ">
         <?php include_once '../../includes/admin/navbar.php';?>
         <!-- Content -->
+            <!-- TABLEAU -->
         <div class="tableContainer m-4">
         <div class="d-flex justify-content-end m-3">
-            <button href="#modal-product" data-bs-toggle="modal" class="btn btn-primary d-flex "><i class="bi bi-plus-circle-dotted me-2"></i>Add Product</button>
+            <button href="#modal-teams" data-bs-toggle="modal" class="btn btn-primary d-flex "  onclick="resetForm()"><i class="bi bi-plus-circle-dotted me-2" ></i>Add Team</button>
         </div>
         
       <table class="table table-dark table-hover table-striped "  id="myTable">
         <thead>
           <tr>
-            <th class="text-center" scope="col">Id</th>
-            <th class="text-center" scope="col">Image</th>
+            <th class="text-center" scope="col">Flag</th>
+            <th class="text-center" scope="col">Team</th>
             <th class="text-center" scope="col">Country</th>
-            <th class="text-center" scope="col">Coach</th>
             <th class="text-center" scope="col">Groups</th>
             <th class="text-center" scope="col">Operations</th>
           </tr>
         </thead>
         <tbody>
 
+        <?php 
+            include '../../models/TeamsModal.php';
+            $b = new Teams();
+            $b->select("teams","*");
+            $result = $b->sql;
+        ?>
+            <?php while ($row = $result->fetch(PDO::FETCH_ASSOC)) { ?>
           <tr class="text-center">
-            <th class="align-middle" scope="row">1</th>
-            <td class="align-middle"><img class="flagImage" src="../../assets/img/Flag-Senegal.webp" alt="image" width="50px"></td>
-            <td class="align-middle">Senegal</td>
-            <td class="align-middle" >Aliou Cissé</td>
-            <td class="align-middle" >A</td>
+            <td class="align-middle"><img class="" src="../../assets/img/<?php echo $row['flag'] ?>" alt="Flag" width="50px"></td>
+            <td class="align-middle"><img class="" src="../../assets/img/<?php echo $row['team_image'] ?>" alt="Team" width="50px"></td>
+            <td class="align-middle"><?php echo $row['name']; ?></td>
+            <td class="align-middle" ><?php echo $row['team_group']; ?></td>
             <td class="align-middle" >
                 <div class="d-flex flex-wrap justify-content-around">
-                    <a href="#" class="btn btn-warning d-flex"></i>Update</a>
-                    <a href="#" class="btn btn-danger d-flex"></i>Delete</a>
+                    <a href="teams.php?updateId=<?php echo $row['id']; ?>" type="button" class="btn btn-warning d-flex" ></i>Update</a>
+                    <a href="../../controllers/TeamsController.php?deleteId=<?php echo $row['id']; ?>" type="button" class="btn btn-danger d-flex" ></i>Delete</a>
                 </div>
             </td>
           </tr>
-
-     
+          <?php } ?>
 
         </tbody>
       </table>
+
+
+      <?php 
+          if(isset($_GET['updateId'])){
+            $b->select("teams","*","id='".$_GET['updateId']."'");
+            $result = $b->sql;
+            $modalRow = $result->fetch(PDO::FETCH_ASSOC);
+          }
+        ?>
               <!-- MODAL -->
-      <div class="modal fade" id="modal-product" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true" >
+      <div class="modal fade" id="modal-teams" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true" >
         <div class="modal-dialog">
           <div class="modal-content">
-            <form action="" method="POST" id="form" enctype="multipart/form-data" data-parsley-validate>
+            <form action="../../controllers/TeamsController.php" method="POST" id="form" enctype="multipart/form-data" data-parsley-validate>
               <div class="modal-header">
-                <h5 class="modal-title">Add Product</h5>
+                <h5 class="modal-title" id="modal-title"><?php if(isset($_GET['updateId'])){echo 'Update';}    else { echo 'Add';}?> Team</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
               </div>
               <div class="modal-body">
                   <!-- HIDDEN INPUT  -->
-                  <input type="hidden" name="product-id">
-                  
+                  <input type="hidden" value="<?php if(isset($modalRow)) echo $modalRow['id'] ?>" name="team-id">
                   <div class="mb-3">
                     <label class="form-label" >Country</label>
-                    <input name="country" type="text" class="form-control" id="country" required/>
-                  </div>
-
-                  <div class="mb-3">
-                    <label class="form-label" >Coach</label>
-                    <input name="coach" type="text" class="form-control" id="coach" required/>
+                    <input name="country" type="text" class="form-control" id="country" value="<?php if(isset($modalRow)) echo $modalRow['name']; ?>" required/>
                   </div>
 
                   <div class="mb-3">
                     <label class="form-label">Groups</label>
                     <select class="form-select" id="groups" name="groups" required>
-                      <option hidden>Please select</option>
-                      <option value="1">A</option>
-                      <option value="2">B</option>
-                      <option value="3">C</option>
-                      <option value="4">D</option>
-                      <option value="5">E</option>
-                      <option value="6">F</option>
-                      <option value="7">G</option>
-                      <option value="8">H</option>
+                      <option disabled hidden selected>Please select</option>
+                      <option <?php if(isset($modalRow)){ echo ($modalRow['team_group']=='A')  ?  'selected' : '';}?> value="A">A</option>
+                      <option <?php if(isset($modalRow)){ echo ($modalRow['team_group']=='B')  ?  'selected' : '';}?> value="B">B</option>
+                      <option <?php if(isset($modalRow)){ echo ($modalRow['team_group']=='C')  ?  'selected' : '';}?> value="C">C</option>
+                      <option <?php if(isset($modalRow)){ echo ($modalRow['team_group']=='D')  ?  'selected' : '';}?> value="D">D</option>
+                      <option <?php if(isset($modalRow)){ echo ($modalRow['team_group']=='E')  ?  'selected' : '';}?> value="E">E</option>
+                      <option <?php if(isset($modalRow)){ echo ($modalRow['team_group']=='F')  ?  'selected' : '';}?> value="F">F</option>
+                      <option <?php if(isset($modalRow)){ echo ($modalRow['team_group']=='G')  ?  'selected' : '';}?> value="G">G</option>
+                      <option <?php if(isset($modalRow)){ echo ($modalRow['team_group']=='H')  ?  'selected' : '';}?> value="H">H</option>
                     </select>
                   </div>
-
+                  
                   <div class="mb-0">
-                    <label class="col-md-4 control-label mb-1" for="filebutton">Product Image</label>
+                    <label class="col-md-4 control-label mb-1" for="filebutton">Flag Image</label>
                     <div class="col-md-4">
-                    <input id="picture" name="picture" class="input-file" type="file">
+                    <input id="flagImage" name="flagImage" class="input-file" type="file">
+                    </div>
+                  </div>
+                  <div class="mb-3">
+                    <label class="col-md-4 control-label mb-1" for="filebutton">Team Image</label>
+                    <div class="col-md-4">
+                    <input id="teamImage" name="teamImage" class="input-file" type="file">
                     </div>
                   </div>
                 
               </div>
               <div class="modal-footer">
-                <button data-bs-dismiss="modal" class="btn btn-secondary" >Cancel</button>
+                <button type="button" data-bs-dismiss="modal" class="btn btn-secondary" >Cancel</button>
                 <button type="submit" name="save" class="btn btn-primary task-action-btn" id="save">Save</button>
                 <button type="submit" name="update" class="btn btn-warning task-action-btn" id="update">Update</button>
               </div>
@@ -99,10 +114,22 @@ include_once '../../includes/admin/head.php';
         </div>
       </div>
     </div>
-
     </main>
+    
 </body>
+
 </html>
+
 <?php include_once '../../includes/admin/corejs.php'; ?>
+<script>
+    <?php if (isset($_GET['updateId'])) { ?>
+      window.onload = function() {
+        $("#save").hide();
+        $("#update").show();
+        $("#modal-teams").modal("show");
+      };
+  <?php }
+    ?>
+  </script>
 
 
