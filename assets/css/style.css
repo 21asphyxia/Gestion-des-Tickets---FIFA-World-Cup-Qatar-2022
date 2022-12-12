@@ -94,10 +94,7 @@ a {
 .cardsSection .px-6 {
     padding: 0 7rem;
 }
-.cardsSection .card:hover{
-    /* border:3px solid var(--secondary-color); */
-    transform: scale(1.05);
-}
+
 /* Ends Youness */
 
 #navbarScroll.navbar-collapse{
@@ -211,4 +208,10 @@ a {
 }
 .sidenav{
     z-index: 999;
+}
+
+/*Resizing the carousel for responsive*/
+@media (max-width: 992px){
+ 
+
 }

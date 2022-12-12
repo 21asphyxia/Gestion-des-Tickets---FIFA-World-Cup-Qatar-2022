@@ -22,7 +22,7 @@ include_once("includes/spectator/head.php");
             <span class="fs-6 fw-bolder">Upcoming Matches</span>
             <span class="fs-8 fw-bolder view-all">View All <i class="fa-solid fa-angle-right"></i></span>
         </div>
-        <div class="carousel-cell js-flickity" data-flickity-options='{ "wrapAround": true , "groupCells":4 }'>
+        <div class="carousel-cell js-flickity" data-flickity-options='{ "wrapAround": true , "groupCells":1 }'>
             <div class="card col-12 col-sm-6 col-lg-3 ms-1">
                 <img src="assets/img/moroccovscroatia.jpg" class="card-img-top" alt="">
                 <div class="card-body d-flex align-items-center justify-content-between">
@@ -214,7 +214,7 @@ include_once("includes/spectator/head.php");
             <span class="fs-8 fw-bolder view-all">View All <i class="fa-solid fa-angle-right"></i></span>
         </div>
         
-        <div class="carousel-cell js-flickity" data-flickity-options='{ "wrapAround": true , "groupCells":4 }'>
+        <div class="carousel-cell js-flickity" data-flickity-options='{ "wrapAround": true , "groupCells":1 }'>
             <div class="card col-12 col-sm-6 col-lg-3 ms-1">
                 <img src="assets/img/team-morocco.jpg" class="card-img-top" alt="">
                 <div class="card-body d-flex flex-column align-items-start row-gap">
@@ -291,7 +291,7 @@ include_once("includes/spectator/head.php");
             <span class="fs-6 fw-bolder">Browse Available Stadiums</span>
             <span class="fs-8 fw-bolder view-all">View All <i class="fa-solid fa-angle-right"></i></span>
         </div>
-        <div class="carousel-cell js-flickity" data-flickity-options='{ "wrapAround": true , "groupCells":4 }'>
+        <div class="carousel-cell js-flickity" data-flickity-options='{ "wrapAround": true , "groupCells":1 }'>
             <div class="card col-12 col-sm-6 col-lg-3 ms-1">
                 <img src="assets/img/stadium-ahmad-bin-ali.jpg" class="card-img-top" alt="">
                 <div class="card-body d-flex flex-column align-items-start row-gap">
