@@ -116,96 +116,10 @@ include_once("includes/spectator/head.php");
         </div>
     </section>
     
-  <section class="pb-5" id="sectionGroups">
-    <div class="d-flex justify-content-sm-between flex-column flex-sm-row align-items-center py-3 px-4">
-    <img src="assets/img/logo_(1).png" alt="logo fifa" width="200PX">
-    <H1 style="color: white;">Groups</H1>
-    </div>
-    <!-- CARDS -->
-    <div class="d-flex flex-wrap justify-content-around py-5" id="card">
-      <div class="card mb-4" style="width: 20rem;">
-        <div class="card-header text-center fw-bold">Group A</div>
-          <ul class="list-group list-group-flush">
-            <li class="list-group-item fw-bold"><img class="me-2 border border-secondary" src="assets/img/Flag_of_Qatar_(3-2).svg.webp" alt="Qatar flag" width="30px"> Qatar</li>
-            <li class="list-group-item fw-bold"><img class="me-2 border border-secondary" src="assets/img/Flag_of_Ecuador.svg.webp" alt="Ecuador flag" width="30px"> Ecuador</li>
-            <li class="list-group-item fw-bold"><img class="me-2 border border-secondary" src="assets/img/Flag-Senegal.webp" alt="Senegal flag" width="30px"> Senegal</li>
-            <li class="list-group-item fw-bold"><img class="me-2 border border-secondary" src="assets/img/1200px-Flag_of_the_Netherlands.svg.webp" alt="Ecuador flag" width="30px"> Netherlands</li>
-          </ul>
-      </div>
-      <div class="card mb-4" style="width: 20rem;">
-        <div class="card-header text-center fw-bold">
-          Group A
-        </div>
-        <ul class="list-group list-group-flush">
-          <li class="list-group-item fw-bold"><img class="me-2 border border-secondary" src="assets/img/Flag_of_Qatar_(3-2).svg.webp" alt="Qatar flag" width="30px"> Qatar</li>
-          <li class="list-group-item fw-bold"><img class="me-2 border border-secondary" src="assets/img/Flag_of_Ecuador.svg.webp" alt="Ecuador flag" width="30px"> Ecuador</li>
-          <li class="list-group-item fw-bold"><img class="me-2 border border-secondary" src="assets/img/Flag-Senegal.webp" alt="Senegal flag" width="30px"> Senegal</li>
-          <li class="list-group-item fw-bold"><img class="me-2 border border-secondary" src="assets/img/1200px-Flag_of_the_Netherlands.svg.webp" alt="Ecuador flag" width="30px"> Netherlands</li>
-        </ul>
-      </div>
-      <div class="card mb-4" style="width: 20rem;">
-        <div class="card-header text-center fw-bold">Group A</div>
-        <ul class="list-group list-group-flush">
-          <li class="list-group-item fw-bold"><img class="me-2 border border-secondary" src="assets/img/Flag_of_Qatar_(3-2).svg.webp" alt="Qatar flag" width="30px"> Qatar</li>
-          <li class="list-group-item fw-bold"><img class="me-2 border border-secondary" src="assets/img/Flag_of_Ecuador.svg.webp" alt="Ecuador flag" width="30px"> Ecuador</li>
-          <li class="list-group-item fw-bold"><img class="me-2 border border-secondary" src="assets/img/Flag-Senegal.webp" alt="Senegal flag" width="30px"> Senegal</li>
-          <li class="list-group-item fw-bold"><img class="me-2 border border-secondary" src="assets/img/1200px-Flag_of_the_Netherlands.svg.webp" alt="Ecuador flag" width="30px"> Netherlands</li>
-        </ul>
-      </div>
-      <div class="card mb-4" style="width: 20rem;">
-        <div class="card-header text-center fw-bold">Group A</div>
-        <ul class="list-group list-group-flush">
-          <li class="list-group-item fw-bold"><img class="me-2 border border-secondary" src="assets/img/Flag_of_Qatar_(3-2).svg.webp" alt="Qatar flag" width="30px"> Qatar</li>
-          <li class="list-group-item fw-bold"><img class="me-2 border border-secondary" src="assets/img/Flag_of_Ecuador.svg.webp" alt="Ecuador flag" width="30px"> Ecuador</li>
-          <li class="list-group-item fw-bold"><img class="me-2 border border-secondary" src="assets/img/Flag-Senegal.webp" alt="Senegal flag" width="30px"> Senegal</li>
-          <li class="list-group-item fw-bold"><img class="me-2 border border-secondary" src="assets/img/1200px-Flag_of_the_Netherlands.svg.webp" alt="Ecuador flag" width="30px"> Netherlands</li>
-        </ul>
-      </div>
-      <div class="card mb-4" style="width: 20rem;">
-          <div class="card-header text-center fw-bold">Group A</div>
-          <ul class="list-group list-group-flush">
-              <li class="list-group-item fw-bold"><img class="me-2 border border-secondary" src="assets/img/Flag_of_Qatar_(3-2).svg.webp" alt="Qatar flag" width="30px"> Qatar</li>
-              <li class="list-group-item fw-bold"><img class="me-2 border border-secondary" src="assets/img/Flag_of_Ecuador.svg.webp" alt="Ecuador flag" width="30px"> Ecuador</li>
-              <li class="list-group-item fw-bold"><img class="me-2 border border-secondary" src="assets/img/Flag-Senegal.webp" alt="Senegal flag" width="30px"> Senegal</li>
-              <li class="list-group-item fw-bold"><img class="me-2 border border-secondary" src="assets/img/1200px-Flag_of_the_Netherlands.svg.webp" alt="Ecuador flag" width="30px"> Netherlands</li>
-          </ul>
-      </div>
-      <div class="card mb-4" style="width: 20rem;">
-          <div class="card-header text-center fw-bold">
-              Group A
-          </div>
-          <ul class="list-group list-group-flush">
-              <li class="list-group-item fw-bold"><img class="me-2 border border-secondary" src="assets/img/Flag_of_Qatar_(3-2).svg.webp" alt="Qatar flag" width="30px"> Qatar</li>
-              <li class="list-group-item fw-bold"><img class="me-2 border border-secondary" src="assets/img/Flag_of_Ecuador.svg.webp" alt="Ecuador flag" width="30px"> Ecuador</li>
-              <li class="list-group-item fw-bold"><img class="me-2 border border-secondary" src="assets/img/Flag-Senegal.webp" alt="Senegal flag" width="30px"> Senegal</li>
-              <li class="list-group-item fw-bold"><img class="me-2 border border-secondary" src="assets/img/1200px-Flag_of_the_Netherlands.svg.webp" alt="Ecuador flag" width="30px"> Netherlands</li>
-          </ul>
-      </div>
-      <div class="card mb-4" style="width: 20rem;">
-          <div class="card-header text-center fw-bold">
-              Group A
-          </div>
-          <ul class="list-group list-group-flush">
-              <li class="list-group-item fw-bold"><img class="me-2 border border-secondary" src="assets/img/Flag_of_Qatar_(3-2).svg.webp" alt="Qatar flag" width="30px"> Qatar</li>
-              <li class="list-group-item fw-bold"><img class="me-2 border border-secondary" src="assets/img/Flag_of_Ecuador.svg.webp" alt="Ecuador flag" width="30px"> Ecuador</li>
-              <li class="list-group-item fw-bold"><img class="me-2 border border-secondary" src="assets/img/Flag-Senegal.webp" alt="Senegal flag" width="30px"> Senegal</li>
-              <li class="list-group-item fw-bold"><img class="me-2 border border-secondary" src="assets/img/1200px-Flag_of_the_Netherlands.svg.webp" alt="Ecuador flag" width="30px"> Netherlands</li>
-          </ul>
-      </div>
-      <div class="card mb-4" style="width: 20rem;">
-          <div class="card-header text-center fw-bold">
-            Group A
-          </div>
-          <ul class="list-group list-group-flush">
-            <li class="list-group-item fw-bold"><img class="me-2 border border-secondary" src="assets/img/Flag_of_Qatar_(3-2).svg.webp" alt="Qatar flag" width="30px"> Qatar</li>
-            <li class="list-group-item fw-bold"><img class="me-2 border border-secondary" src="assets/img/Flag_of_Ecuador.svg.webp" alt="Ecuador flag" width="30px"> Ecuador</li>
-            <li class="list-group-item fw-bold"><img class="me-2 border border-secondary" src="assets/img/Flag-Senegal.webp" alt="Senegal flag" width="30px"> Senegal</li>
-            <li class="list-group-item fw-bold"><img class="me-2 border border-secondary" src="assets/img/1200px-Flag_of_the_Netherlands.svg.webp" alt="Ecuador flag" width="30px"> Netherlands</li>
-          </ul>
-      </div>
-    </div>
-      
-  </section>
+  <!--  groups  -->
+    <section class="col-12 d-flex justify-content-center bg-danger">
+        <img src="assets/img/FIFA-World-Cup-Qatar-2022-Final-groups.jpg" class="container groups-img img-fluid mx-auto d-block" alt="image">
+    </section>
     
     <section class="cardsSection mx-5">
         <!-- ////////////////////////// Browse National Teams /////////////////////////////////-->
@@ -213,72 +127,25 @@ include_once("includes/spectator/head.php");
             <span class="fs-6 fw-bolder">Browse National Teams</span>
             <span class="fs-8 fw-bolder view-all">View All <i class="fa-solid fa-angle-right"></i></span>
         </div>
-        
+        <?php 
+            include 'models/TeamsModal.php';
+            $b = new Teams();
+            $b->select("teams","*");
+            $result = $b->sql;
+        ?>
+        <!-- <div class="row"> -->
         <div class="carousel-cell js-flickity" data-flickity-options='{ "wrapAround": true , "groupCells":1 }'>
-            <div class="card col-12 col-sm-6 col-lg-3 ms-1">
-                <img src="assets/img/team-morocco.jpg" class="card-img-top" alt="">
-                <div class="card-body d-flex flex-column align-items-start row-gap">
-                    <span class="fs-8">Moroccan National Team</span>
-                    <span class="fs-8">Group F</span>
-                    <span class="fs-8"><i class="fas fa-location-dot" ></i> Morroco</span>
+        
+            <?php while ($row = $result->fetch(PDO::FETCH_ASSOC)) { ?>
+                <div class="card col-12 col-sm-6 col-lg-3 ms-1">
+                    <img src="assets/img/<?php echo $row['team_image'] ?>" class="card-img-top" alt="Team" height="225">
+                    <div class="card-body d-flex flex-column align-items-start row-gap">
+                        <span class="fs-8"><?php echo $row['name']; ?> National Team</span>
+                        <span class="fs-8">Group <?php echo $row['team_group']; ?></span>
+                        <span class="fs-8"><i class="fas fa-location-dot" ></i> <?php echo $row['name']; ?></span>
+                    </div>
                 </div>
-            </div>
-            <div class="card col-12 col-sm-6 col-lg-3 ms-1">
-                <img src="assets/img/team-morocco.jpg" class="card-img-top" alt="">
-                <div class="card-body d-flex flex-column align-items-start row-gap">
-                    <span class="fs-8">Moroccan National Team</span>
-                    <span class="fs-8">Group F</span>
-                    <span class="fs-8"><i class="fas fa-location-dot" ></i> Morroco</span>
-                </div>
-            </div>
-            <div class="card col-12 col-sm-6 col-lg-3 ms-1">
-                <img src="assets/img/team-morocco.jpg" class="card-img-top" alt="">
-                <div class="card-body d-flex flex-column align-items-start row-gap">
-                    <span class="fs-8">Moroccan National Team</span>
-                    <span class="fs-8">Group F</span>
-                    <span class="fs-8"><i class="fas fa-location-dot" ></i> Morroco</span>
-                </div>
-            </div>
-            <div class="card col-12 col-sm-6 col-lg-3 ms-1">
-                <img src="assets/img/team-morocco.jpg" class="card-img-top" alt="">
-                <div class="card-body d-flex flex-column align-items-start row-gap">
-                    <span class="fs-8">Moroccan National Team</span>
-                    <span class="fs-8">Group F</span>
-                    <span class="fs-8"><i class="fas fa-location-dot" ></i> Morroco</span>
-                </div>
-            </div>
-            <div class="card col-12 col-sm-6 col-lg-3 ms-1">
-                <img src="assets/img/team-morocco.jpg" class="card-img-top" alt="">
-                <div class="card-body d-flex flex-column align-items-start row-gap">
-                    <span class="fs-8">Moroccan National Team</span>
-                    <span class="fs-8">Group F</span>
-                    <span class="fs-8"><i class="fas fa-location-dot" ></i> Morroco</span>
-                </div>
-            </div>
-            <div class="card col-12 col-sm-6 col-lg-3 ms-1">
-                <img src="assets/img/team-morocco.jpg" class="card-img-top" alt="">
-                <div class="card-body d-flex flex-column align-items-start row-gap">
-                    <span class="fs-8">Moroccan National Team</span>
-                    <span class="fs-8">Group F</span>
-                    <span class="fs-8"><i class="fas fa-location-dot" ></i> Morroco</span>
-                </div>
-            </div>
-            <div class="card col-12 col-sm-6 col-lg-3 ms-1">
-                <img src="assets/img/team-morocco.jpg" class="card-img-top" alt="">
-                <div class="card-body d-flex flex-column align-items-start row-gap">
-                    <span class="fs-8">Moroccan National Team</span>
-                    <span class="fs-8">Group F</span>
-                    <span class="fs-8"><i class="fas fa-location-dot" ></i> Morroco</span>
-                </div>
-            </div>
-            <div class="card col-12 col-sm-6 col-lg-3 ms-1">
-                <img src="assets/img/team-morocco.jpg" class="card-img-top" alt="">
-                <div class="card-body d-flex flex-column align-items-start row-gap">
-                    <span class="fs-8">Moroccan National Team</span>
-                    <span class="fs-8">Group F</span>
-                    <span class="fs-8"><i class="fas fa-location-dot" ></i> Morroco</span>
-                </div>
-            </div>
+            <?php } ?>
             
             
         </div>
@@ -291,71 +158,26 @@ include_once("includes/spectator/head.php");
             <span class="fs-6 fw-bolder">Browse Available Stadiums</span>
             <span class="fs-8 fw-bolder view-all">View All <i class="fa-solid fa-angle-right"></i></span>
         </div>
+        <?php 
+            include "controllers/StadiumsController.php";
+            $stadiums = new controllerStade();
+            $data = $stadiums->getStads();
+        ?>
         <div class="carousel-cell js-flickity" data-flickity-options='{ "wrapAround": true , "groupCells":1 }'>
+        <?php foreach($data as $stads) { ?>
             <div class="card col-12 col-sm-6 col-lg-3 ms-1">
-                <img src="assets/img/stadium-ahmad-bin-ali.jpg" class="card-img-top" alt="">
+                <img src="assets/upload/<?php echo $stads['image']; ?>" class="card-img-top" alt="">
                 <div class="card-body d-flex flex-column align-items-start row-gap">
-                    <span class="fs-8">Ahmad Bin Ali Stadium</span>
-                    <span class="fs-8">Capacity: 40,000.</span>
-                    <span class="fs-8"><i class="fas fa-location-dot" ></i> Ahmad Bin Ali Stadium</span>
+                    <span class="fs-8"><?php echo $stads['name']; ?></span>
+                    <span class="fs-8">Capacity: <?php echo $stads['capacity']; ?></span>
+                    <span class="fs-8"><i class="fas fa-location-dot" ></i> <?php echo $stads['location']; ?></span>
                 </div>
             </div>
-            <div class="card col-12 col-sm-6 col-lg-3 ms-1">
-                <img src="assets/img/stadium-ahmad-bin-ali.jpg" class="card-img-top" alt="">
-                <div class="card-body d-flex flex-column align-items-start row-gap">
-                    <span class="fs-8">Ahmad Bin Ali Stadium</span>
-                    <span class="fs-8">Capacity: 40,000.</span>
-                    <span class="fs-8"><i class="fas fa-location-dot" ></i> Ahmad Bin Ali Stadium</span>
-                </div>
-            </div>
-            <div class="card col-12 col-sm-6 col-lg-3 ms-1">
-                <img src="assets/img/stadium-ahmad-bin-ali.jpg" class="card-img-top" alt="">
-                <div class="card-body d-flex flex-column align-items-start row-gap">
-                    <span class="fs-8">Ahmad Bin Ali Stadium</span>
-                    <span class="fs-8">Capacity: 40,000.</span>
-                    <span class="fs-8"><i class="fas fa-location-dot" ></i> Ahmad Bin Ali Stadium</span>
-                </div>
-            </div>
-            <div class="card col-12 col-sm-6 col-lg-3 ms-1">
-                <img src="assets/img/stadium-ahmad-bin-ali.jpg" class="card-img-top" alt="">
-                <div class="card-body d-flex flex-column align-items-start row-gap">
-                    <span class="fs-8">Ahmad Bin Ali Stadium</span>
-                    <span class="fs-8">Capacity: 40,000.</span>
-                    <span class="fs-8"><i class="fas fa-location-dot" ></i> Ahmad Bin Ali Stadium</span>
-                </div>
-            </div>
-            <div class="card col-12 col-sm-6 col-lg-3 ms-1">
-                <img src="assets/img/stadium-ahmad-bin-ali.jpg" class="card-img-top" alt="">
-                <div class="card-body d-flex flex-column align-items-start row-gap">
-                    <span class="fs-8">Ahmad Bin Ali Stadium</span>
-                    <span class="fs-8">Capacity: 40,000.</span>
-                    <span class="fs-8"><i class="fas fa-location-dot" ></i> Ahmad Bin Ali Stadium</span>
-                </div>
-            </div>
-            <div class="card col-12 col-sm-6 col-lg-3 ms-1">
-                <img src="assets/img/stadium-ahmad-bin-ali.jpg" class="card-img-top" alt="">
-                <div class="card-body d-flex flex-column align-items-start row-gap">
-                    <span class="fs-8">Ahmad Bin Ali Stadium</span>
-                    <span class="fs-8">Capacity: 40,000.</span>
-                    <span class="fs-8"><i class="fas fa-location-dot" ></i> Ahmad Bin Ali Stadium</span>
-                </div>
-            </div>
-            <div class="card col-12 col-sm-6 col-lg-3 ms-1">
-                <img src="assets/img/stadium-ahmad-bin-ali.jpg" class="card-img-top" alt="">
-                <div class="card-body d-flex flex-column align-items-start row-gap">
-                    <span class="fs-8">Ahmad Bin Ali Stadium</span>
-                    <span class="fs-8">Capacity: 40,000.</span>
-                    <span class="fs-8"><i class="fas fa-location-dot" ></i> Ahmad Bin Ali Stadium</span>
-                </div>
-            </div>
-            <div class="card col-12 col-sm-6 col-lg-3 ms-1">
-                <img src="assets/img/stadium-ahmad-bin-ali.jpg" class="card-img-top" alt="">
-                <div class="card-body d-flex flex-column align-items-start row-gap">
-                    <span class="fs-8">Ahmad Bin Ali Stadium</span>
-                    <span class="fs-8">Capacity: 40,000.</span>
-                    <span class="fs-8"><i class="fas fa-location-dot" ></i> Ahmad Bin Ali Stadium</span>
-                </div>
-            </div>
+        <?php } ?>
+
+        </div>
+            
+            
         
     
     </section>

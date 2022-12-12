@@ -212,8 +212,6 @@ a {
     z-index: 999;
 }
 
-/*Resizing the carousel for responsive*/
-@media (max-width: 992px){
- 
-
+.bg-danger{
+    background-color: #8b1539 !important;
 }
