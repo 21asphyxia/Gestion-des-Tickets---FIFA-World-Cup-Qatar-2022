@@ -15,4 +15,5 @@
     <link rel="icon" href="<?php if($title != "Home") echo "../../"; ?>assets/img/logo.png" type="image/gif" sizes="16x16">
 
     <!-- / -->
+    <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
 </head>

@@ -22,8 +22,8 @@ include_once("includes/spectator/head.php");
             <span class="fs-6 fw-bolder">Upcoming Matches</span>
             <span class="fs-8 fw-bolder view-all">View All <i class="fa-solid fa-angle-right"></i></span>
         </div>
-        <div class="row">
-            <div class="card col-12 col-sm-6 col-lg-3">
+        <div class="carousel-cell js-flickity" data-flickity-options='{ "wrapAround": true , "groupCells":4 }'>
+            <div class="card col-12 col-sm-6 col-lg-3 ms-1">
                 <img src="assets/img/moroccovscroatia.jpg" class="card-img-top" alt="">
                 <div class="card-body d-flex align-items-center justify-content-between">
                     <span class="fs-8 fw-bold">NOV 23</span>
@@ -34,39 +34,85 @@ include_once("includes/spectator/head.php");
                     </div>
                 </div>
             </div>
-            <div class="card col-12 col-sm-6 col-lg-3">
-                <img src="assets/img/moroccovsbelgium.jpg" class="card-img-top" alt="">
+            <div class="card col-12 col-sm-6 col-lg-3 ms-1">
+                <img src="assets/img/moroccovscroatia.jpg" class="card-img-top" alt="">
                 <div class="card-body d-flex align-items-center justify-content-between">
-                    <span class="fs-8 fw-bold">NOV 27</span>
+                    <span class="fs-8 fw-bold">NOV 23</span>
                     <div class="d-flex flex-column row-gap">
-                        <span class="fs-8">Morroco vs Belgium</span>
-                        <span class="fs-8">$ 230</span>
+                        <span class="fs-8">Morroco vs Croatia</span>
+                        <span class="fs-8">$ 150</span>
                         <span class="fs-8"><i class="fas fa-location-dot" ></i> Ahmad Bin Ali Stadium</span>
                     </div>
                 </div>
             </div>
-            <div class="card col-12 col-sm-6 col-lg-3">
-                <img src="assets/img/moroccovscanada.jpg" class="card-img-top" alt="">
+            <div class="card col-12 col-sm-6 col-lg-3 ms-1">
+                <img src="assets/img/moroccovscroatia.jpg" class="card-img-top" alt="">
                 <div class="card-body d-flex align-items-center justify-content-between">
-                    <span class="fs-8 fw-bold">DEC 01</span>
+                    <span class="fs-8 fw-bold">NOV 23</span>
                     <div class="d-flex flex-column row-gap">
-                        <span class="fs-8">Morroco vs Canada</span>
-                        <span class="fs-8">$ 180</span>
+                        <span class="fs-8">Morroco vs Croatia</span>
+                        <span class="fs-8">$ 150</span>
                         <span class="fs-8"><i class="fas fa-location-dot" ></i> Ahmad Bin Ali Stadium</span>
                     </div>
                 </div>
             </div>
-            <div class="card col-12 col-sm-6 col-lg-3">
-                <img src="assets/img/saudiarabiavsargentina.jpg" class="card-img-top" alt="">
+            <div class="card col-12 col-sm-6 col-lg-3 ms-1">
+                <img src="assets/img/moroccovscroatia.jpg" class="card-img-top" alt="">
                 <div class="card-body d-flex align-items-center justify-content-between">
-                    <span class="fs-8 fw-bold">NOV 24</span>
+                    <span class="fs-8 fw-bold">NOV 23</span>
                     <div class="d-flex flex-column row-gap">
-                        <span class="fs-8">Saudi Arabia vs Argentina</span>
-                        <span class="fs-8">$ 220</span>
+                        <span class="fs-8">Morroco vs Croatia</span>
+                        <span class="fs-8">$ 150</span>
                         <span class="fs-8"><i class="fas fa-location-dot" ></i> Ahmad Bin Ali Stadium</span>
                     </div>
                 </div>
             </div>
+            <div class="card col-12 col-sm-6 col-lg-3 ms-1">
+                <img src="assets/img/moroccovscroatia.jpg" class="card-img-top" alt="">
+                <div class="card-body d-flex align-items-center justify-content-between">
+                    <span class="fs-8 fw-bold">NOV 23</span>
+                    <div class="d-flex flex-column row-gap">
+                        <span class="fs-8">Morroco vs Croatia</span>
+                        <span class="fs-8">$ 150</span>
+                        <span class="fs-8"><i class="fas fa-location-dot" ></i> Ahmad Bin Ali Stadium</span>
+                    </div>
+                </div>
+            </div>
+            <div class="card col-12 col-sm-6 col-lg-3 ms-1">
+                <img src="assets/img/moroccovscroatia.jpg" class="card-img-top" alt="">
+                <div class="card-body d-flex align-items-center justify-content-between">
+                    <span class="fs-8 fw-bold">NOV 23</span>
+                    <div class="d-flex flex-column row-gap">
+                        <span class="fs-8">Morroco vs Croatia</span>
+                        <span class="fs-8">$ 150</span>
+                        <span class="fs-8"><i class="fas fa-location-dot" ></i> Ahmad Bin Ali Stadium</span>
+                    </div>
+                </div>
+            </div>
+            <div class="card col-12 col-sm-6 col-lg-3 ms-1">
+                <img src="assets/img/moroccovscroatia.jpg" class="card-img-top" alt="">
+                <div class="card-body d-flex align-items-center justify-content-between">
+                    <span class="fs-8 fw-bold">NOV 23</span>
+                    <div class="d-flex flex-column row-gap">
+                        <span class="fs-8">Morroco vs Croatia</span>
+                        <span class="fs-8">$ 150</span>
+                        <span class="fs-8"><i class="fas fa-location-dot" ></i> Ahmad Bin Ali Stadium</span>
+                    </div>
+                </div>
+            </div>
+            <div class="card col-12 col-sm-6 col-lg-3 ms-1">
+                <img src="assets/img/moroccovscroatia.jpg" class="card-img-top" alt="">
+                <div class="card-body d-flex align-items-center justify-content-between">
+                    <span class="fs-8 fw-bold">NOV 23</span>
+                    <div class="d-flex flex-column row-gap">
+                        <span class="fs-8">Morroco vs Croatia</span>
+                        <span class="fs-8">$ 150</span>
+                        <span class="fs-8"><i class="fas fa-location-dot" ></i> Ahmad Bin Ali Stadium</span>
+                    </div>
+                </div>
+            </div>
+            
+            
         </div>
     </section>
     
@@ -167,9 +213,9 @@ include_once("includes/spectator/head.php");
             <span class="fs-6 fw-bolder">Browse National Teams</span>
             <span class="fs-8 fw-bolder view-all">View All <i class="fa-solid fa-angle-right"></i></span>
         </div>
-
-        <div class="row">
-            <div class="card col-12 col-sm-6 col-lg-3">
+        
+        <div class="carousel-cell js-flickity" data-flickity-options='{ "wrapAround": true , "groupCells":4 }'>
+            <div class="card col-12 col-sm-6 col-lg-3 ms-1">
                 <img src="assets/img/team-morocco.jpg" class="card-img-top" alt="">
                 <div class="card-body d-flex flex-column align-items-start row-gap">
                     <span class="fs-8">Moroccan National Team</span>
@@ -177,30 +223,64 @@ include_once("includes/spectator/head.php");
                     <span class="fs-8"><i class="fas fa-location-dot" ></i> Morroco</span>
                 </div>
             </div>
-            <div class="card col-12 col-sm-6 col-lg-3">
-                <img src="assets/img/team-belgium.jpg" class="card-img-top" alt="">
+            <div class="card col-12 col-sm-6 col-lg-3 ms-1">
+                <img src="assets/img/team-morocco.jpg" class="card-img-top" alt="">
                 <div class="card-body d-flex flex-column align-items-start row-gap">
-                    <span class="fs-8">Belgium National Team</span>
+                    <span class="fs-8">Moroccan National Team</span>
                     <span class="fs-8">Group F</span>
-                    <span class="fs-8"><i class="fas fa-location-dot" ></i> Belgium</span>
+                    <span class="fs-8"><i class="fas fa-location-dot" ></i> Morroco</span>
                 </div>
             </div>
-            <div class="card col-12 col-sm-6 col-lg-3">
-                <img src="assets/img/team-croatia.jpg" class="card-img-top" alt="">
+            <div class="card col-12 col-sm-6 col-lg-3 ms-1">
+                <img src="assets/img/team-morocco.jpg" class="card-img-top" alt="">
                 <div class="card-body d-flex flex-column align-items-start row-gap">
-                    <span class="fs-8">Croitian National Team</span>
+                    <span class="fs-8">Moroccan National Team</span>
                     <span class="fs-8">Group F</span>
-                    <span class="fs-8"><i class="fas fa-location-dot" ></i> Croitia</span>
+                    <span class="fs-8"><i class="fas fa-location-dot" ></i> Morroco</span>
                 </div>
             </div>
-            <div class="card col-12 col-sm-6 col-lg-3">
-                <img src="assets/img/team-canada.jpg" class="card-img-top" alt="">
+            <div class="card col-12 col-sm-6 col-lg-3 ms-1">
+                <img src="assets/img/team-morocco.jpg" class="card-img-top" alt="">
                 <div class="card-body d-flex flex-column align-items-start row-gap">
-                    <span class="fs-8">Canadian National Team</span>
+                    <span class="fs-8">Moroccan National Team</span>
                     <span class="fs-8">Group F</span>
-                    <span class="fs-8"><i class="fas fa-location-dot" ></i> Canada</span>
+                    <span class="fs-8"><i class="fas fa-location-dot" ></i> Morroco</span>
                 </div>
             </div>
+            <div class="card col-12 col-sm-6 col-lg-3 ms-1">
+                <img src="assets/img/team-morocco.jpg" class="card-img-top" alt="">
+                <div class="card-body d-flex flex-column align-items-start row-gap">
+                    <span class="fs-8">Moroccan National Team</span>
+                    <span class="fs-8">Group F</span>
+                    <span class="fs-8"><i class="fas fa-location-dot" ></i> Morroco</span>
+                </div>
+            </div>
+            <div class="card col-12 col-sm-6 col-lg-3 ms-1">
+                <img src="assets/img/team-morocco.jpg" class="card-img-top" alt="">
+                <div class="card-body d-flex flex-column align-items-start row-gap">
+                    <span class="fs-8">Moroccan National Team</span>
+                    <span class="fs-8">Group F</span>
+                    <span class="fs-8"><i class="fas fa-location-dot" ></i> Morroco</span>
+                </div>
+            </div>
+            <div class="card col-12 col-sm-6 col-lg-3 ms-1">
+                <img src="assets/img/team-morocco.jpg" class="card-img-top" alt="">
+                <div class="card-body d-flex flex-column align-items-start row-gap">
+                    <span class="fs-8">Moroccan National Team</span>
+                    <span class="fs-8">Group F</span>
+                    <span class="fs-8"><i class="fas fa-location-dot" ></i> Morroco</span>
+                </div>
+            </div>
+            <div class="card col-12 col-sm-6 col-lg-3 ms-1">
+                <img src="assets/img/team-morocco.jpg" class="card-img-top" alt="">
+                <div class="card-body d-flex flex-column align-items-start row-gap">
+                    <span class="fs-8">Moroccan National Team</span>
+                    <span class="fs-8">Group F</span>
+                    <span class="fs-8"><i class="fas fa-location-dot" ></i> Morroco</span>
+                </div>
+            </div>
+            
+            
         </div>
     
     
@@ -211,8 +291,8 @@ include_once("includes/spectator/head.php");
             <span class="fs-6 fw-bolder">Browse Available Stadiums</span>
             <span class="fs-8 fw-bolder view-all">View All <i class="fa-solid fa-angle-right"></i></span>
         </div>
-        <div class="row">
-            <div class="card col-12 col-sm-6 col-lg-3">
+        <div class="carousel-cell js-flickity" data-flickity-options='{ "wrapAround": true , "groupCells":4 }'>
+            <div class="card col-12 col-sm-6 col-lg-3 ms-1">
                 <img src="assets/img/stadium-ahmad-bin-ali.jpg" class="card-img-top" alt="">
                 <div class="card-body d-flex flex-column align-items-start row-gap">
                     <span class="fs-8">Ahmad Bin Ali Stadium</span>
@@ -220,31 +300,63 @@ include_once("includes/spectator/head.php");
                     <span class="fs-8"><i class="fas fa-location-dot" ></i> Ahmad Bin Ali Stadium</span>
                 </div>
             </div>
-            <div class="card col-12 col-sm-6 col-lg-3">
-                <img src="assets/img/stadium-al-bayt.jpg" class="card-img-top" alt="">
+            <div class="card col-12 col-sm-6 col-lg-3 ms-1">
+                <img src="assets/img/stadium-ahmad-bin-ali.jpg" class="card-img-top" alt="">
                 <div class="card-body d-flex flex-column align-items-start row-gap">
-                    <span class="fs-8">Al Bayt Stadium</span>
-                    <span class="fs-8">Capacity: 60,000.</span>
-                    <span class="fs-8"><i class="fas fa-location-dot" ></i> Ahmad Bin Ali Stadium</span>
-                </div>
-            </div>
-            <div class="card col-12 col-sm-6 col-lg-3">
-                <img src="assets/img/stadium-al-janoub.jpg" class="card-img-top" alt="">
-                <div class="card-body d-flex flex-column align-items-start row-gap">
-                    <span class="fs-8">Al Janoub Stadium</span>
+                    <span class="fs-8">Ahmad Bin Ali Stadium</span>
                     <span class="fs-8">Capacity: 40,000.</span>
                     <span class="fs-8"><i class="fas fa-location-dot" ></i> Ahmad Bin Ali Stadium</span>
                 </div>
             </div>
-            <div class="card col-12 col-sm-6 col-lg-3">
-                <img src="assets/img/stadium-al-thumama.jpg" class="card-img-top" alt="">
+            <div class="card col-12 col-sm-6 col-lg-3 ms-1">
+                <img src="assets/img/stadium-ahmad-bin-ali.jpg" class="card-img-top" alt="">
                 <div class="card-body d-flex flex-column align-items-start row-gap">
-                    <span class="fs-8">Al Thumama Stadium</span>
+                    <span class="fs-8">Ahmad Bin Ali Stadium</span>
                     <span class="fs-8">Capacity: 40,000.</span>
                     <span class="fs-8"><i class="fas fa-location-dot" ></i> Ahmad Bin Ali Stadium</span>
                 </div>
             </div>
-        </div>
+            <div class="card col-12 col-sm-6 col-lg-3 ms-1">
+                <img src="assets/img/stadium-ahmad-bin-ali.jpg" class="card-img-top" alt="">
+                <div class="card-body d-flex flex-column align-items-start row-gap">
+                    <span class="fs-8">Ahmad Bin Ali Stadium</span>
+                    <span class="fs-8">Capacity: 40,000.</span>
+                    <span class="fs-8"><i class="fas fa-location-dot" ></i> Ahmad Bin Ali Stadium</span>
+                </div>
+            </div>
+            <div class="card col-12 col-sm-6 col-lg-3 ms-1">
+                <img src="assets/img/stadium-ahmad-bin-ali.jpg" class="card-img-top" alt="">
+                <div class="card-body d-flex flex-column align-items-start row-gap">
+                    <span class="fs-8">Ahmad Bin Ali Stadium</span>
+                    <span class="fs-8">Capacity: 40,000.</span>
+                    <span class="fs-8"><i class="fas fa-location-dot" ></i> Ahmad Bin Ali Stadium</span>
+                </div>
+            </div>
+            <div class="card col-12 col-sm-6 col-lg-3 ms-1">
+                <img src="assets/img/stadium-ahmad-bin-ali.jpg" class="card-img-top" alt="">
+                <div class="card-body d-flex flex-column align-items-start row-gap">
+                    <span class="fs-8">Ahmad Bin Ali Stadium</span>
+                    <span class="fs-8">Capacity: 40,000.</span>
+                    <span class="fs-8"><i class="fas fa-location-dot" ></i> Ahmad Bin Ali Stadium</span>
+                </div>
+            </div>
+            <div class="card col-12 col-sm-6 col-lg-3 ms-1">
+                <img src="assets/img/stadium-ahmad-bin-ali.jpg" class="card-img-top" alt="">
+                <div class="card-body d-flex flex-column align-items-start row-gap">
+                    <span class="fs-8">Ahmad Bin Ali Stadium</span>
+                    <span class="fs-8">Capacity: 40,000.</span>
+                    <span class="fs-8"><i class="fas fa-location-dot" ></i> Ahmad Bin Ali Stadium</span>
+                </div>
+            </div>
+            <div class="card col-12 col-sm-6 col-lg-3 ms-1">
+                <img src="assets/img/stadium-ahmad-bin-ali.jpg" class="card-img-top" alt="">
+                <div class="card-body d-flex flex-column align-items-start row-gap">
+                    <span class="fs-8">Ahmad Bin Ali Stadium</span>
+                    <span class="fs-8">Capacity: 40,000.</span>
+                    <span class="fs-8"><i class="fas fa-location-dot" ></i> Ahmad Bin Ali Stadium</span>
+                </div>
+            </div>
+        
     
     </section>
   <?php include ("includes/spectator/footer.php"); ?>
@@ -258,3 +370,4 @@ include_once("includes/spectator/head.php");
 <script type="text/javascript" src="https://cdn.jsdelivr.net/jquery/latest/jquery.min.js"></script>
 <script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
 <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
+<script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
