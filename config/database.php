@@ -1,4 +1,5 @@
 <?php
+
 class Database {
     private $host = "localhost";
     private $dbName = "fifa";
@@ -17,5 +18,7 @@ class Database {
     {
         $this->con = null;
     }
+
+    
 }
 ?>

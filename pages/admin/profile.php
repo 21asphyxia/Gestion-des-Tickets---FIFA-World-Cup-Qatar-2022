@@ -1,4 +1,6 @@
 <?php
+require_once('../../controllers/updateprofileController.php');
+
 $adminTitle = 'Admin | Profile';
 include_once '../../includes/admin/head.php';
 ?>
@@ -16,7 +18,7 @@ include_once '../../includes/admin/head.php';
                       <div class="d-flex flex-column align-items-center text-center">
                         <img src="https://bootdey.com/img/Content/avatar/avatar7.png" alt="Admin" class="rounded-circle" width="150">
                         <div class="mt-3">
-                          <h4>Salah</h4>
+                          <h4><?= $val["name"]?></h4>
                           <p class="badge text-bg-primary mb-1">Admin</p>
                           
                         </div>
@@ -28,40 +30,37 @@ include_once '../../includes/admin/head.php';
                 <div class="col-md-8">
                   <div class="card mb-3">
                     <div class="card-body">
-                      <div class="row justify-content-center ">
-                        <div class="col-sm-3">
-                          <h6 class="mb-0">Full Name</h6>
+                      <form  method="post">
+                        <div class="row justify-content-center ">
+                          <div class="col-sm-3">
+                            <h6 class="mb-0">Full Name</h6>
+                          </div>
+                          <input name="nameProfile" class="col-sm-9 text-secondary w-50" type="text" value="<?=$val["name"] ?>"></input>
                         </div>
-                        <input class="col-sm-9 text-secondary w-50" type="text"></input>
-                      </div>
-                      <hr>
-                      <div class="row justify-content-center ">
-                        <div class="col-sm-3">
-                          <h6 class="mb-0">Email</h6>
+                        <hr>
+                        <div class="row justify-content-center ">
+                          <div class="col-sm-3">
+                            <h6 class="mb-0">Email</h6>
+                          </div>
+                          <input name="emailProfile" class="col-sm-9 text-secondary w-50" type="email" value="<?= $val["email"]?>"></input>
                         </div>
-                        <input class="col-sm-9 text-secondary w-50" type="email"></input>
-                      </div>
-                      <hr>
-                      <div class="row justify-content-center ">
-                        <div class="col-sm-3">
-                          <h6 class="mb-0">Password</h6>
+                        <hr>
+                        <div class="row justify-content-center ">
+                          <div class="col-sm-3">
+                            <h6 class="mb-0">Password</h6>
+                          </div>
+                          <input name="passwordProfile" class="col-sm-9 text-secondary w-50" type="password" value="<?= $val["password"]?>"></input>
                         </div>
-                        <input class="col-sm-9 text-secondary w-50" type="password"></input>
-                      </div>
-                      <hr>
-                      <div class="row justify-content-center ">
-                        <div class="col-sm-3">
-                          <h6 class="mb-0">Confirm Password</h6>
+                        <hr>
+                        
+                        <hr>
+                        <div class="row ">
+                          <div class="col-sm-12 d-flex justify-content-evenly">
+                            <input type="submit" name="updateProfile" class="btn btn-info text-white"  value="update">
+                            <input type="submit" name="deleteProfile" class="btn btn-danger" value="delete account">
+                          </div>
                         </div>
-                        <input class="col-sm-9 text-secondary w-50" type="password" ></input>
-                      </div>
-                      <hr>
-                      <div class="row ">
-                        <div class="col-sm-12 d-flex justify-content-evenly">
-                          <a class="btn btn-info text-white" target="__blank" href="#">Update</a>
-                          <a class="btn btn-danger" href="#">Delete Account</a>
-                        </div>
-                      </div>
+                      </form>
                     </div>
                   </div>
                 </div>
