@@ -53,10 +53,6 @@ class Stadiums extends Database{
         $res = $stmt->fetch();
         return $res;
     }
-  
-    
-
-
 
 }
 ?>
