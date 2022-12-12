@@ -21,7 +21,7 @@
           <!-- Grid column -->
           <div class="col-md-2 fw-light col-lg-2 col-xl-2 mx-auto mb-4">
             <!-- Links -->
-            <h6 class="fw-light mb-4">
+            <h6 class="fw-bold mb-4">
               About
             </h6>
             <p>
@@ -49,7 +49,7 @@
           <!-- Grid column -->
             <div class="col-md-3 fw-light col-lg-2 col-xl-2 mx-auto mb-4">
               <!-- Links -->
-              <h6 class="fw-light mb-4">
+              <h6 class="fw-bold mb-4">
                 Partner with us
               </h6>
               <p>
