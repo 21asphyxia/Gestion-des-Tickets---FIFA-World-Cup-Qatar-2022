@@ -6,8 +6,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <link rel="icon" type="image/png" href="../../assets/img/logo.png">
   <title><?= $adminTitle ?></title>
+  <link rel="stylesheet" href="https://parsleyjs.org/src/parsley.css">
   <!-- DATA TABLE CSS -->
   <link href="//cdn.datatables.net/1.13.1/css/jquery.dataTables.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="../../assets/css/data-table.css">
   <!--     Fonts and icons     -->
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet" />
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" rel="stylesheet" />
@@ -20,5 +22,5 @@
   <!-- CSS Files -->
   <link id="pagestyle" href="../../assets/css/template/soft-ui-dashboard.css?v=1.0.6" rel="stylesheet" />
   <link rel="stylesheet" href="../../assets/css/style.css">
-  <link rel="stylesheet" href="../../assets/css/data-table.css">
+  
 </head>
