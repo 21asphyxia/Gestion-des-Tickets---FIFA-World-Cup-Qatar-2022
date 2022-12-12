@@ -1,7 +1,7 @@
 <!-- navBar -->
 <nav class="navbar navbar-expand-md">
   <div class="container-fluid">
-    <a id="Youtickets" class="navbar-brand fw-bold" href="<?php if ($title != "Home") echo "../../"; ?>index.php">YouTickets.com</a>
+    <a id="Youtickets" class="navbar-brand fw-bold" href="<?php /*if ($title != "Home")*/ echo "../../"; ?>index.php">YouTickets.com</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -38,26 +38,26 @@
         <div class="modal-body">
           <div class="card ">
             <div class="card-body">
-              <form action="" method="post">
+              <form action="./controllers/LoginController.php" method="post">
                 <div class="mb-3">
                   <label for="email1" class="form-label">Email</label>
-                  <input type="email" name="email" class="form-control" id="email1"></input>
+                  <input type="email" name="emailLogin" class="form-control" id="email1"/>
                 </div>
                 <div class="mb-3">
                   <label for="exampleInputPassword1" class="form-label">Password</label>
-                  <input type="password" name="password" class="form-control" id="exampleInputPassword1"></input>
+                  <input type="password" name="passwordLogin" class="form-control" id="exampleInputPassword1"/>
                 </div>
+                  <div class="modal-footer d-flex flex-column align-items-center">
+                      <button type="submit" name="login" class="btn btn-prim">LOGIN</button>
+                  </div>
               </form>
             </div>
           </div>
         </div>
-        <div class="modal-footer d-flex flex-column align-items-center ">
-          <button type="button" class="btn btn-prim">LOGIN</button>
-        </div>
+
       </div>
     </div>
   </div>
-
   <!-- SIGNUP Modal -->
   <div class="modal fade" id="signup" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog">
@@ -69,26 +69,35 @@
         <div class="modal-body">
           <div class="card ">
             <div class="card-body">
-              <form action="" method="post">
+              <form action="./controllers/SignUpController.php" method="POST">
                 <div class="mb-3">
                   <label for="fullName" class="form-label">Full Name</label>
-                  <input type="text" name="firstName" class="form-control" id="fullName"></input>
+                  <input type="text" name="fullname" class="form-control" id="fullname"/>
                 </div>
                 <div class="mb-3">
                   <label for="email2" class="form-label">Email</label>
-                  <input type="email" name="email" class="form-control" id="email2"></input>
+                  <input type="email" name="email" class="form-control" id="email"/>
                 </div>
                 <div class="mb-3">
                   <label for="password" class="form-label">Password</label>
-                  <input type="password" name="password" class="form-control" id="password"></input>
+                  <input type="password" name="password" class="form-control" id="password"/>
                 </div>
+                <div class="mb-3">
+                  <label for="password" class="form-label">Password</label>
+                  <input type="password" name="confirm-password" class="form-control" id="password"/>
+                </div>
+                  <!--check your TAGS  A HAJJOU-->
+                  <div class="modal-footer d-flex flex-column align-items-center ">
+                     <!-- <input type="submit" name="submit" class="btn btn-prim"/>-->
+                      <div class="modal-footer d-flex flex-column align-items-center ">
+                          <button name="signup" type="submit" class="btn btn-prim">SIGNUP</button> <!-- button HAJJOU -->
+                      </div>
+             </div>
               </form>
             </div>
           </div>
         </div>
-        <div class="modal-footer d-flex flex-column align-items-center ">
-          <button type="button" class="btn btn-prim">SIGNUP</button> <!-- button HAJJOU -->
-        </div>
+
       </div>
     </div>
   </div>

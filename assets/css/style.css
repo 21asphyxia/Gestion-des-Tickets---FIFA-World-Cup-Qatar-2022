@@ -97,6 +97,8 @@ a {
 
 /* Ends Youness */
 
+/* START Hajjou */
+
 #navbarScroll.navbar-collapse{
     flex-grow: 0;
 }
@@ -130,7 +132,7 @@ a {
     color: var(--primary-color);
 
 }
-/* ___________________________________________END Hajjou___________________________________________ */
+/*END Hajjou */
 
 .bg-purple{
     background-color: #DADAFB;
