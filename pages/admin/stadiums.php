@@ -21,7 +21,6 @@ $data = $stadiums->getStads();
       <table class="table table-dark table-hover table-striped "  id="myTable">
         <thead>
           <tr>
-            <!-- <th class="text-center" scope="col">Id</th> -->
             <th class="text-center" scope="col">Name</th>
             <th class="text-center" scope="col">Image</th>
             <th class="text-center" scope="col">Location</th>
@@ -30,19 +29,6 @@ $data = $stadiums->getStads();
           </tr>
         </thead>
         <tbody>
-          <!-- <tr class="text-center"> -->
-            <!-- <th class="align-middle" scope="row">1</th> -->
-            <!-- <td class="align-middle"><img class="flagImage" src="../../assets/img/Flag-Senegal.webp" alt="image" width="50px"></td>
-            <td class="align-middle">Senegal</td>
-            <td class="align-middle" >Aliou Cissé</td>
-            <td class="align-middle" >40000</td>
-            <td class="align-middle" >
-                <div class="d-flex flex-wrap justify-content-around">
-                    <a href="#" name="" class="btn btn-warning d-flex"></i>Update</a>
-                    <a href="#"  class="btn btn-danger d-flex"></i>Delete</a>
-                </div>
-            </td>
-          </tr> -->
           <?php
             foreach($data as $stads){
               echo "
@@ -120,11 +106,11 @@ $data = $stadiums->getStads();
 						url: '../../controllers/StadiumsController.php',
 						data: {getStad: id},
 						success: function( response ) {
-              obj = JSON.parse(response);
-              document.querySelector('#StadiumId').value = obj.id;
-              document.querySelector('#nameStadiums').value = obj.name;
-              document.querySelector('#location').value = obj.location;
-              document.querySelector('#capacity').value = obj.capacity;
+            obj = JSON.parse(response);
+            document.querySelector('#StadiumId').value = obj.id;
+            document.querySelector('#nameStadiums').value = obj.name;
+            document.querySelector('#location').value = obj.location;
+            document.querySelector('#capacity').value = obj.capacity;
 							
 						},					
 					});
@@ -136,12 +122,12 @@ $data = $stadiums->getStads();
         function confirmDelete(id){
           
           Swal.fire({
-                title: 'Are you sure?',
+                title: 'Are you sure you want to delete this?',
                 text: "You won't be able to revert this!",
                 icon: 'warning',
                 showCancelButton: true,
-                confirmButtonColor: '#f80642',
-                cancelButtonColor: '#ff50d6',
+                confirmButtonColor: '#c52495',
+                cancelButtonColor: '#c3c3c3',
                 confirmButtonText: 'Delete'
               }).then((result) => {
                 if (result.isConfirmed) {
@@ -163,11 +149,10 @@ $data = $stadiums->getStads();
               document.getElementById('location').value = "";
 
               
-              
-            document.getElementById('update').classList.add("d-none");
-            document.getElementById('update').classList.remove("d-block");
-            document.getElementById('save').classList.add("d-block");
-            document.getElementById('save').classList.remove("d-none");
+              document.getElementById('update').classList.add("d-none");
+              document.getElementById('update').classList.remove("d-block");
+              document.getElementById('save').classList.add("d-block");
+              document.getElementById('save').classList.remove("d-none");
         }
         function updateStadium(){
         
