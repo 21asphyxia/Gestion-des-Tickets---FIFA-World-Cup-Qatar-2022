@@ -8,6 +8,7 @@
     <script src="../../assets/js/scripts.js"></script>
     <script src="../../assets/js/data-table.js"></script>
     <script src="//cdn.datatables.net/1.13.1/js/jquery.dataTables.min.js"></script>
+    <script src="https://parsleyjs.org/dist/parsley.min.js"></script>
     <script>
         var win = navigator.platform.indexOf('Win') > -1;
         if (win && document.querySelector('#sidenav-scrollbar')) {
