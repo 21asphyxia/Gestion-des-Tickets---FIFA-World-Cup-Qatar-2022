@@ -1,5 +1,4 @@
 <?php
-session_start();
 require '../classes/SignUp.class.php';
 
 
@@ -12,11 +11,12 @@ if(isset($_POST["login"])){
     $getrow = $dsn->getRows("SELECT * FROM users WHERE email = ? AND password=? ", array($email, $password));
     foreach ($getrow as $val)
     if($row != 0){
+        $_SESSION["id"] = $val["id"];
+        $_SESSION["email"] = $email;
         if($val["role"] == "admin"){
             header('location:../pages/admin/dashboard.php');
-                $_SESSION["email"] = $email;
         }else{
-            header('location:../pages/spectator/reservation.php');
+            header('location:../index.php');
         }
     }
 }

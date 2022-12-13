@@ -1,7 +1,7 @@
 <?php $title = "Home";
+include "controllers/MatchesController.php";
 include "controllers/StadiumsController.php";
-
-include_once("includes/spectator/head.php"); 
+include_once("includes/spectator/head.php");
 ?>
 <body>
   <header>
@@ -25,95 +25,20 @@ include_once("includes/spectator/head.php");
             <span class="fs-8 fw-bolder view-all">View All <i class="fa-solid fa-angle-right"></i></span>
         </div>
         <div class="carousel-cell js-flickity" data-flickity-options='{ "wrapAround": true , "groupCells":1 }'>
-            <div class="card col-12 col-sm-6 col-lg-3 ms-1">
-                <img src="assets/img/moroccovscroatia.jpg" class="card-img-top" alt="">
+        <?php foreach ($matches as $key => $value) {?>
+            <a class="card col-12 col-sm-6 col-lg-3 ms-1" href="pages/spectator/reservation.php?id=<?= $value['id'] ?>">
+                <img src="assets/upload/<?= ($value['image']== '') ?  'image-placeholder.png' : $value['image'] ?>" class="card-img-top" alt="">
                 <div class="card-body d-flex align-items-center justify-content-between">
-                    <span class="fs-8 fw-bold">NOV 23</span>
+                    <span class="fs-8 fw-bold"><?= strtoupper(date_format(date_create($value['date']), 'd M'));
+                     ?></span>
                     <div class="d-flex flex-column row-gap">
-                        <span class="fs-8">Morroco vs Croatia</span>
-                        <span class="fs-8">$ 150</span>
-                        <span class="fs-8"><i class="fas fa-location-dot" ></i> Ahmad Bin Ali Stadium</span>
+                        <span class="fs-8"><?= $value['team1_name']." vs ".$value['team2_name'] ?></span>
+                        <span class="fs-8">To FILL</span>
+                        <span class="fs-8"><i class="fas fa-location-dot" ></i> <?= $value['stadium_name'] ?></span>
                     </div>
                 </div>
-            </div>
-            <div class="card col-12 col-sm-6 col-lg-3 ms-1">
-                <img src="assets/img/moroccovscroatia.jpg" class="card-img-top" alt="">
-                <div class="card-body d-flex align-items-center justify-content-between">
-                    <span class="fs-8 fw-bold">NOV 23</span>
-                    <div class="d-flex flex-column row-gap">
-                        <span class="fs-8">Morroco vs Croatia</span>
-                        <span class="fs-8">$ 150</span>
-                        <span class="fs-8"><i class="fas fa-location-dot" ></i> Ahmad Bin Ali Stadium</span>
-                    </div>
-                </div>
-            </div>
-            <div class="card col-12 col-sm-6 col-lg-3 ms-1">
-                <img src="assets/img/moroccovscroatia.jpg" class="card-img-top" alt="">
-                <div class="card-body d-flex align-items-center justify-content-between">
-                    <span class="fs-8 fw-bold">NOV 23</span>
-                    <div class="d-flex flex-column row-gap">
-                        <span class="fs-8">Morroco vs Croatia</span>
-                        <span class="fs-8">$ 150</span>
-                        <span class="fs-8"><i class="fas fa-location-dot" ></i> Ahmad Bin Ali Stadium</span>
-                    </div>
-                </div>
-            </div>
-            <div class="card col-12 col-sm-6 col-lg-3 ms-1">
-                <img src="assets/img/moroccovscroatia.jpg" class="card-img-top" alt="">
-                <div class="card-body d-flex align-items-center justify-content-between">
-                    <span class="fs-8 fw-bold">NOV 23</span>
-                    <div class="d-flex flex-column row-gap">
-                        <span class="fs-8">Morroco vs Croatia</span>
-                        <span class="fs-8">$ 150</span>
-                        <span class="fs-8"><i class="fas fa-location-dot" ></i> Ahmad Bin Ali Stadium</span>
-                    </div>
-                </div>
-            </div>
-            <div class="card col-12 col-sm-6 col-lg-3 ms-1">
-                <img src="assets/img/moroccovscroatia.jpg" class="card-img-top" alt="">
-                <div class="card-body d-flex align-items-center justify-content-between">
-                    <span class="fs-8 fw-bold">NOV 23</span>
-                    <div class="d-flex flex-column row-gap">
-                        <span class="fs-8">Morroco vs Croatia</span>
-                        <span class="fs-8">$ 150</span>
-                        <span class="fs-8"><i class="fas fa-location-dot" ></i> Ahmad Bin Ali Stadium</span>
-                    </div>
-                </div>
-            </div>
-            <div class="card col-12 col-sm-6 col-lg-3 ms-1">
-                <img src="assets/img/moroccovscroatia.jpg" class="card-img-top" alt="">
-                <div class="card-body d-flex align-items-center justify-content-between">
-                    <span class="fs-8 fw-bold">NOV 23</span>
-                    <div class="d-flex flex-column row-gap">
-                        <span class="fs-8">Morroco vs Croatia</span>
-                        <span class="fs-8">$ 150</span>
-                        <span class="fs-8"><i class="fas fa-location-dot" ></i> Ahmad Bin Ali Stadium</span>
-                    </div>
-                </div>
-            </div>
-            <div class="card col-12 col-sm-6 col-lg-3 ms-1">
-                <img src="assets/img/moroccovscroatia.jpg" class="card-img-top" alt="">
-                <div class="card-body d-flex align-items-center justify-content-between">
-                    <span class="fs-8 fw-bold">NOV 23</span>
-                    <div class="d-flex flex-column row-gap">
-                        <span class="fs-8">Morroco vs Croatia</span>
-                        <span class="fs-8">$ 150</span>
-                        <span class="fs-8"><i class="fas fa-location-dot" ></i> Ahmad Bin Ali Stadium</span>
-                    </div>
-                </div>
-            </div>
-            <div class="card col-12 col-sm-6 col-lg-3 ms-1">
-                <img src="assets/img/moroccovscroatia.jpg" class="card-img-top" alt="">
-                <div class="card-body d-flex align-items-center justify-content-between">
-                    <span class="fs-8 fw-bold">NOV 23</span>
-                    <div class="d-flex flex-column row-gap">
-                        <span class="fs-8">Morroco vs Croatia</span>
-                        <span class="fs-8">$ 150</span>
-                        <span class="fs-8"><i class="fas fa-location-dot" ></i> Ahmad Bin Ali Stadium</span>
-                    </div>
-                </div>
-            </div>
-            
+            </a>
+        <?php } ?>
             
         </div>
     </section>
@@ -130,7 +55,7 @@ include_once("includes/spectator/head.php");
             <span class="fs-8 fw-bolder view-all">View All <i class="fa-solid fa-angle-right"></i></span>
         </div>
         <?php 
-            include 'models/TeamsModal.php';
+            include_once 'models/TeamsModal.php';
             $b = new Teams();
             $b->select("teams","*");
             $result = $b->sql;
@@ -161,14 +86,13 @@ include_once("includes/spectator/head.php");
             <span class="fs-8 fw-bolder view-all">View All <i class="fa-solid fa-angle-right"></i></span>
         </div>
         <?php 
-            
             $stadiums = new controllerStade();
             $data = $stadiums->getStads();
         ?>
         <div class="carousel-cell js-flickity" data-flickity-options='{ "wrapAround": true , "groupCells":1 }'>
         <?php foreach($data as $stads) { ?>
             <div class="card col-12 col-sm-6 col-lg-3 ms-1">
-                <img src="assets/upload/<?php echo $stads['image']; ?>" class="card-img-top" alt="">
+                <img src="assets/upload/<?= $stads['image'] ?>" class="card-img-top" alt="">
                 <div class="card-body d-flex flex-column align-items-start row-gap">
                     <span class="fs-8"><?php echo $stads['name']; ?></span>
                     <span class="fs-8">Capacity: <?php echo $stads['capacity']; ?></span>
