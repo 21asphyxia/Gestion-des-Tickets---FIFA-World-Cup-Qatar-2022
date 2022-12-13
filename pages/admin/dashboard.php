@@ -1,5 +1,5 @@
 <?php
-// session_start();
+$adminTitle = "Dashboard";
 include_once '../../includes/admin/head.php';
 ?>
 <body class="g-sidenav-show bg-gray-100">

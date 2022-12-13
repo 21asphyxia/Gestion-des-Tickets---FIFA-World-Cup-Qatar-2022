@@ -1,5 +1,5 @@
 <?php
- require 'C:\xampp\htdocs\Gestion-des-Tickets---FIFA-World-Cup-Qatar-2022\config\database.php';
+ require __DIR__.'/../config/database.php';
 
 class SignUp extends Database {
 

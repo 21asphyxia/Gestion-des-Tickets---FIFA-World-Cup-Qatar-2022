@@ -1,7 +1,6 @@
 <?php
+$adminTitle = 'Profile';
 require_once('../../controllers/updateprofileController.php');
-
-$adminTitle = 'Admin | Profile';
 include_once '../../includes/admin/head.php';
 ?>
 <body class="g-sidenav-show bg-gray-100">
