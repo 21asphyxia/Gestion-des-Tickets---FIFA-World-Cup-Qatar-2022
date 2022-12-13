@@ -1,6 +1,10 @@
 <?php
+// require '../classes/SignUp.class.php';
 
-$spectators = $dsn->getStats("SELECT COUNT(role) FROM users", array());
 
+// $dsn = new SignUp();
+
+// $spectators = $dsn->NumberRow($query,$param);
+// echo "fdsssssssssssss";
 
 ?>
