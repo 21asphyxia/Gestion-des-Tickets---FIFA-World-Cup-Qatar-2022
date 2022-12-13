@@ -1,21 +1,22 @@
 <?php 
     //INCLUDES
-    require(__DIR__.'/../models/MatchesModel.php');
-    require(__DIR__.'/../models/TeamsModal.php');
-    require(__DIR__.'/../models/StadiumsModel.php');
+    require_once(__DIR__.'/../models/MatchesModel.php');
+    require_once(__DIR__.'/../models/TeamsModal.php');
+    require_once(__DIR__.'/../models/StadiumsModel.php');
     
 
     $readMatches = new MatchesModel();
     $teams = new Teams();
     $stadiums = new Stadiums();
     //SAVE FUNCTION
-    if (isset($_POST['save'])) {   
+    if (isset($_POST['save'])) {
         $errors = array();
         //Check if all fields are filled
         if(empty($_POST['date']))        $errors['date'] = "Date is required";
         if(empty($_POST['team_1']))              $errors['team_1'] = "First team is required";
         if(empty($_POST['team_2']))           $errors['team_2'] = "Second team is required";
         if(empty($_POST['stadium']))              $errors['stadium'] = "Stadium is required";
+        if(empty($_POST['price']))              $errors['price'] = "Price is required";
         if(empty($_POST['description']))        $errors['description'] = "Description is required";
         
         //Check if there are errors
@@ -48,11 +49,12 @@
         {
             //If there are errors, redirect to products.php with errors
             //Empty fields alerts
-            $_SESSION['dateErr'] = $errors['date'];
-            $_SESSION['team_1Err'] = $errors['team_1'];
-            $_SESSION['team_2Err'] = $errors['team_2'];
-            $_SESSION['stadiumErr'] = $errors['stadium'];
-            $_SESSION['descriptionErr'] = $errors['description'];
+            if(isset($errors['date']))  $_SESSION['dateErr'] = $errors['date'];
+            if(isset($errors['team_1']))  $_SESSION['team_1Err'] = $errors['team_1'];
+            if(isset($errors['team_2']))  $_SESSION['team_2Err'] = $errors['team_2'];
+            if(isset($errors['stadium']))  $_SESSION['stadiumErr'] = $errors['stadium'];
+            if(isset($errors['price']))  $_SESSION['priceErr'] = $errors['price'];
+            if(isset($errors['description']))  $_SESSION['descriptionErr'] = $errors['description'];
             //launch js script to show already filled fields in modal
             $_SESSION['error'] = "<script type = text/javascript>
             createMatch(); 
@@ -60,6 +62,7 @@
             document.getElementById('first-team').value = '".$_POST['team_1']."';
             document.getElementById('second-team').value = '".$_POST['team_2']."';
             document.getElementById('stadium').value = '".$_POST['stadium']."';
+            document.getElementById('price').value = '".$_POST['price']."';
             document.getElementById('description').value = '".$_POST['description']."';
             </script>";
         }
@@ -100,6 +103,7 @@
         if(empty($_POST['team_1']))              $errors['team_1'] = "First team is required";
         if(empty($_POST['team_2']))           $errors['team_2'] = "Second team is required";
         if(empty($_POST['stadium']))              $errors['stadium'] = "Stadium is required";
+        if(empty($_POST['price']))              $errors['price'] = "Price is required";
         if(empty($_POST['description']))        $errors['description'] = "Description is required";
         
         

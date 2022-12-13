@@ -1,5 +1,4 @@
 <?php
-session_start();
 require_once('C:\xampp\htdocs\Gestion-des-Tickets---FIFA-World-Cup-Qatar-2022\classes\SignUp.class.php');
 $dsn=new SignUp();
 $emailS = $_SESSION["email"];

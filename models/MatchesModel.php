@@ -12,7 +12,7 @@ class MatchesModel {
 
     public function getMatches(){
         $sql = $this->db->prepare(
-            'SELECT matches.id,matches.date,matches.image,team_1.name as team1_name,team_2.name as team2_name,stadiums.name as stadium_name,stadiums.capacity FROM matches
+            'SELECT matches.id,matches.date,matches.image,team_1.name as team1_name,team_2.name as team2_name,stadiums.name as stadium_name,stadiums.capacity,matches.price FROM matches
             LEFT JOIN stadiums ON matches.stadium_id = stadiums.id
             JOIN teams as team_1 ON matches.team1_id = team_1.id
             JOIN teams as team_2 ON  matches.team2_id = team_2.id');
@@ -24,7 +24,7 @@ class MatchesModel {
 
     public function getMatchById($id){
         $sql = $this->db->prepare(
-            'SELECT matches.id,matches.date,matches.image,team_1.name as team1_name,team_2.name as team2_name,stadiums.name as stadium_name,stadiums.capacity,matches.description FROM matches
+            'SELECT matches.id,matches.date,matches.image,team_1.name as team1_name,team_2.name as team2_name,stadiums.name as stadium_name,stadiums.capacity,matches.price,matches.description FROM matches
             LEFT JOIN stadiums ON matches.stadium_id = stadiums.id
             JOIN teams as team_1 ON matches.team1_id = team_1.id
             JOIN teams as team_2 ON  matches.team2_id = team_2.id
@@ -40,12 +40,13 @@ class MatchesModel {
             $image = "";
         }
         else{$image = $this->uploadImage();}
-        $sql = $this->db->prepare('INSERT INTO matches (date,image, team1_id, team2_id, stadium_id,description) VALUES (:date , :image, (SELECT id FROM teams WHERE name =  :team_1), (SELECT id FROM teams WHERE name = :team_2) , (SELECT id FROM stadiums WHERE name = :stadium),:description)');
+        $sql = $this->db->prepare('INSERT INTO matches (date,image, team1_id, team2_id, stadium_id,price,description) VALUES (:date , :image, (SELECT id FROM teams WHERE name =  :team_1), (SELECT id FROM teams WHERE name = :team_2) , (SELECT id FROM stadiums WHERE name = :stadium),:price,:description)');
         $sql->bindParam(':date', $_POST['date']);
         $sql->bindParam(':image', $image);
         $sql->bindParam(':team_1', $_POST['team_1']);
         $sql->bindParam(':team_2', $_POST['team_2']);
         $sql->bindParam(':stadium', $_POST['stadium']);
+        $sql->bindParam(':price', $_POST['price']);
         $sql->bindParam(':description', $_POST['description']);
         if($sql->execute()){
             return true;
@@ -58,13 +59,14 @@ class MatchesModel {
         if($image != ""){
             $image = $this->uploadImage();
         }
-        $sql = $this->db->prepare('UPDATE matches SET date = :date , image = :image, team1_id = (SELECT id FROM teams WHERE name =  :team_1) , team2_id = (SELECT id FROM teams WHERE name = :team_2) , stadium_id = (SELECT id FROM stadiums WHERE name = :stadium) , description = :description WHERE id = :id');
+        $sql = $this->db->prepare('UPDATE matches SET date = :date , image = :image, team1_id = (SELECT id FROM teams WHERE name =  :team_1) , team2_id = (SELECT id FROM teams WHERE name = :team_2) , stadium_id = (SELECT id FROM stadiums WHERE name = :stadium) , price = :price ,description = :description WHERE id = :id');
         $sql->bindParam(':id', $id);
         $sql->bindParam(':date', $_POST['date']);
         $sql->bindParam(':image', $image);
         $sql->bindParam(':team_1', $_POST['team_1']);
         $sql->bindParam(':team_2', $_POST['team_2']);
         $sql->bindParam(':stadium', $_POST['stadium']);
+        $sql->bindParam(':price', $_POST['price']);
         $sql->bindParam(':description', $_POST['description']);
         if($sql->execute()){
             return true;
