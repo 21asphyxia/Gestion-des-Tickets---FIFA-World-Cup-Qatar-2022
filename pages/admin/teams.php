@@ -1,5 +1,6 @@
 <?php
-$pagetitle='teams';
+include '../../models/TeamsModal.php';
+$adminTitle='Teams';
 include_once '../../includes/admin/head.php';
 ?>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css">
@@ -27,7 +28,6 @@ include_once '../../includes/admin/head.php';
         <tbody>
 
         <?php 
-            include '../../models/TeamsModal.php';
             $b = new Teams();
             $b->select("teams","*");
             $result = $b->sql;

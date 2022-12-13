@@ -5,7 +5,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <link rel="icon" type="image/png" href="../../assets/img/logo.png">
-  <title><?= $adminTitle ?></title>
+  <title><?= "Admin | ".$adminTitle ?></title>
   <link rel="stylesheet" href="https://parsleyjs.org/src/parsley.css">
   <!-- DATA TABLE CSS -->
   <link href="//cdn.datatables.net/1.13.1/css/jquery.dataTables.min.css" rel="stylesheet" />
