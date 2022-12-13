@@ -1,6 +1,11 @@
 <?php
 $adminTitle = "Dashboard";
+require_once('../../classes/SignUp.class.php');
+if(!isset($_SESSION["id"]) || $_SESSION["role"] != "admin"){
+    header('location:../../index.php');
+}
 include_once '../../includes/admin/head.php';
+
 ?>
 <body class="g-sidenav-show bg-gray-100">
     <?php include_once '../../includes/admin/sidebar.php'; ?>
@@ -38,7 +43,7 @@ include_once '../../includes/admin/head.php';
                     <div class="numbers">
                         <p class="text-sm mb-0 text-capitalize font-weight-bold">Stades Disponible</p>
                         <h5 class="font-weight-bolder mb-0">
-                        5
+
                         </h5>
                     </div>
                     </div>
@@ -59,7 +64,11 @@ include_once '../../includes/admin/head.php';
                     <div class="numbers">
                         <p class="text-sm mb-0 text-capitalize font-weight-bold">Spectateurs</p>
                         <h5 class="font-weight-bolder mb-0">
-                        3,462
+                        <?php
+                        $dsn = new SignUp();
+                        $number = $dsn->NumberRow("SELECT * FROM users where role=?",array("spectator"));
+                        echo $number;
+                        ?>
                         </h5>
                     </div>
                     </div>

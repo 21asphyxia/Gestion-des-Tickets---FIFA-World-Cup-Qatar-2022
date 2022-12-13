@@ -7,9 +7,9 @@ class controllerStade extends Stadiums{
         if($_SERVER['REQUEST_METHOD']=='POST'){
             if(isset($_REQUEST['save'])){
                 // extract([$_POST]);
-                $name      =$_POST['nameStadiums'];
-                $capacity  =$_POST['capacity'];
-                $location  =$_POST['location'];
+                $name      = $_POST['nameStadiums'];
+                $capacity  = $_POST['capacity'];
+                $location  = $_POST['location'];
                 if(!empty($_FILES["stadiumPicture"])) {
                     $pic=$this->uploadimage();
                     $result =$this ->addStadiums($name,$location,$capacity,$pic);
