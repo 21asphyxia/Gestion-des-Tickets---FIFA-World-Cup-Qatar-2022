@@ -77,7 +77,7 @@ class controllerStade extends Stadiums{
                 $img_ex = pathinfo($img_name, PATHINFO_EXTENSION);// return extension of image
                 $img_ex_lc = strtolower($img_ex);
                 
-                $allowed_exs = array("jpg", "jpeg", "png"); 
+                $allowed_exs = array("jpg", "jpeg", "png","webp"); 
 
                     if (in_array($img_ex_lc, $allowed_exs)) 
                     {
