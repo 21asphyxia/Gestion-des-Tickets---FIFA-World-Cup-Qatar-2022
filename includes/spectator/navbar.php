@@ -1,4 +1,5 @@
 <!-- navBar -->
+<?php require_once('C:\xampp\htdocs\Gestion-des-Tickets---FIFA-World-Cup-Qatar-2022\classes\SignUp.class.php');?>
 <nav class="navbar navbar-expand-md">
   <div class="container-fluid">
     <a id="Youtickets" class="navbar-brand fw-bold" href="<?= ($title == "Home")? "" : "../../"?>index.php">YouTickets.com</a>
@@ -21,10 +22,29 @@
           <a class="nav-link active fw-bold" aria-current="page" href="#">Contact</a>
         </li>
       </ul>
-      <form class="d-flex justify-content-center" role="authentification">
-        <button id="btnLogin" class="btn btn-outline m-2 text-nowrap" type="button" data-bs-toggle="modal" data-bs-target="#login">log In</button>
-        <button id="btnSignup" class="btn btn-outline m-2 text-nowrap" type="button" data-bs-toggle="modal" data-bs-target="#signup">Sign Up</button>
-      </form>
+      <?php if(!isset($_SESSION["email"])){ ?>
+            <div class="d-flex justify-content-center">
+            <button id="btnLogin" class="btn btn-outline m-2 text-nowrap" type="button" data-bs-toggle="modal" data-bs-target="#login">log In</button>
+            <button id="btnSignup" class="btn btn-outline m-2 text-nowrap" type="button" data-bs-toggle="modal" data-bs-target="#signup">Sign Up</button>
+      </div>
+        <?php }else{
+        $dsn = new Signup();
+        $email=$_SESSION["email"];
+        $sql =$dsn->getRows("SELECT * FROM users WHERE email=?",array($email));
+        foreach($sql as $val)
+           ?>
+          
+          <div class="dropdown">
+            <button class="btn btn-danger dropdown-toggle px-4" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <i class="fa-solid fa-user"></i>
+              <?= $val["name"];?>
+            </button>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="../../pages/spectator/spectatorProfile.php">Profile</a></li>
+              <li><a class="dropdown-item" href="controllers/logoutController.php">Sign out</a></li>
+            </ul>
+          </div>
+        <?php }; ?>
     </div>
   </div>
 

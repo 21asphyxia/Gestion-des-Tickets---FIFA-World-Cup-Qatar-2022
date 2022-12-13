@@ -1,5 +1,5 @@
 <?php
- require __DIR__.'/../config/database.php';
+ require_once __DIR__.'/../config/database.php';
 
 class SignUp extends Database {
 
@@ -40,13 +40,4 @@ class SignUp extends Database {
        }
    }
 
-   public function getStats($query, $param=[]){
-    try{
-        $sqlstatment = $this->con->prepare($query);
-        $sqlstatment->execute($param);
-        return $sqlstatment->fetchAll(PDO::FETCH_ASSOC);
-       }catch(Exception $e){
-            $e->getMessage();
-       }
-   }
 }
