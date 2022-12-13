@@ -1,7 +1,7 @@
 <!-- navBar -->
 <nav class="navbar navbar-expand-md">
   <div class="container-fluid">
-    <a id="Youtickets" class="navbar-brand fw-bold" href="<?php /*if ($title != "Home")*/ echo "../../"; ?>index.php">YouTickets.com</a>
+    <a id="Youtickets" class="navbar-brand fw-bold" href="<?= ($title == "Home")? "" : "../../"?>index.php">YouTickets.com</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -38,7 +38,7 @@
         <div class="modal-body">
           <div class="card ">
             <div class="card-body">
-              <form action="./controllers/LoginController.php" method="post">
+              <form action="<?= ($title == "Home")? "" : "../../"?>controllers/LoginController.php" method="post">
                 <div class="mb-3">
                   <label for="email1" class="form-label">Email</label>
                   <input type="email" name="emailLogin" class="form-control" id="email1"/>
@@ -69,7 +69,7 @@
         <div class="modal-body">
           <div class="card ">
             <div class="card-body">
-              <form action="./controllers/SignUpController.php" method="POST">
+              <form action="<?= ($title == "Home")? "" : "../../"?>controllers/SignUpController.php" method="POST">
                 <div class="mb-3">
                   <label for="fullName" class="form-label">Full Name</label>
                   <input type="text" name="fullname" class="form-control" id="fullname"/>

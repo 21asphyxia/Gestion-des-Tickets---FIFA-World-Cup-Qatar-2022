@@ -40,6 +40,7 @@ include_once '../../includes/admin/head.php';
             <th class="text-center" scope="col">Stadium</th>
             <th class="text-center" scope="col">Capacity</th>
             <th class="text-center" scope="col">Tickets left</th>
+            <th class="text-center" scope="col">Price</th>
             <th class="text-center" scope="col">Operations</th>
           </tr>
         </thead>
@@ -47,13 +48,14 @@ include_once '../../includes/admin/head.php';
             <?php foreach ($matches as $key => $value) {
             ?>
           <tr class="text-center">
-            <td class="align-middle"><?= $value['date']?></td>
+            <td class="align-middle"><?= date_format(date_create($value['date']), 'd M Y - H:i')?></td>
             <td class="align-middle"><img class="" src="../../assets/upload/<?php if($value['image']== ''){echo 'image-placeholder.png';}else echo $value['image']; ?>" alt="Flag" width="60px"></td>
             <td class="align-middle"><?= $value['team1_name'] ?></td>
             <td class="align-middle"><?= $value['team2_name']; ?></td>
             <td class="align-middle" ><?= $value['stadium_name']; ?></td>
             <td class="align-middle" ><?= $value['capacity']; ?></td>
             <td class="align-middle" >--</td>
+            <td class="align-middle" ><?= $value['price']." $" ?></td>
             <td class="align-middle" >
                 <div class="d-flex flex-wrap justify-content-around">
                     <a href="played-matches.php?updateId=<?= $value['id']; ?>" type="button" class="btn btn-warning d-flex text-dark" ></i>Update</a>
@@ -119,7 +121,12 @@ include_once '../../includes/admin/head.php';
                   <label for="date" class="form-label">Date</label>
                   <input type="datetime-local" class="form-select" id="date" name="date" value="<?php echo (isset($row)) ? $row['date'] : ''; ?>" required>
                 </div>
-
+                
+                <div class="mb-3">
+                  <label for="price" class="form-label">Price</label>
+                  <input type="number" class="form-select" id="price" name="price" value="<?php echo (isset($row)) ? $row['price'] : ''; ?>" required>
+                </div>
+                
                 <div class="mb-3">
                   <input type="file" name="image" class="form-control" id="image">
                 </div>
@@ -130,7 +137,7 @@ include_once '../../includes/admin/head.php';
 							      echo $row['description'];
 						      }?></textarea>
 						      <?php if(isset($_SESSION['descriptionErr'])){
-							        echo '<div class="alert alert-danger mt-2" role="alert">'.$_SESSION['descriptionErr'].'</div>';
+							        echo '<div class="alert alert-danger mt-2 text-light" role="alert">'.$_SESSION['descriptionErr'].'</div>';
 							        unset($_SESSION['descriptionErr']);
 						        }?>
 					      </div>
