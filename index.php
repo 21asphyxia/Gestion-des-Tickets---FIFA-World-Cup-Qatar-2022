@@ -1,4 +1,6 @@
 <?php $title = "Home";
+include "controllers/StadiumsController.php";
+
 include_once("includes/spectator/head.php"); 
 ?>
 <body>
@@ -159,7 +161,7 @@ include_once("includes/spectator/head.php");
             <span class="fs-8 fw-bolder view-all">View All <i class="fa-solid fa-angle-right"></i></span>
         </div>
         <?php 
-            include "controllers/StadiumsController.php";
+            
             $stadiums = new controllerStade();
             $data = $stadiums->getStads();
         ?>

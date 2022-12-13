@@ -18,7 +18,7 @@ include_once '../../includes/admin/head.php';
                         <img src="https://bootdey.com/img/Content/avatar/avatar7.png" alt="Admin" class="rounded-circle" width="150">
                         <div class="mt-3">
                           <h4><?= $val["name"]?></h4>
-                          <p class="badge text-bg-primary mb-1">Admin</p>
+                          <p class="badge text-bg-primary mb-1"><?= $val["role"]?></p>
                           
                         </div>
                       </div>
