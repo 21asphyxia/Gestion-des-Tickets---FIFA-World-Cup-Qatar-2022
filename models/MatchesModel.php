@@ -24,21 +24,23 @@ class MatchesModel {
 
     public function getMatchById($id){
         $sql = $this->db->prepare(
-            'SELECT matches.id,matches.date,matches.image,team_1.name as team1_name,team_2.name as team2_name,stadiums.name as stadium_name,stadiums.capacity FROM matches
+            'SELECT matches.id,matches.date,matches.image,team_1.name as team1_name,team_2.name as team2_name,stadiums.name as stadium_name,stadiums.capacity,matches.description FROM matches
             LEFT JOIN stadiums ON matches.stadium_id = stadiums.id
             JOIN teams as team_1 ON matches.team1_id = team_1.id
             JOIN teams as team_2 ON  matches.team2_id = team_2.id
             WHERE matches.id = :id');
         $sql->bindParam(':id', $id);
         $sql->execute();
-        return $sql;
+        $results = $sql->fetch(PDO::FETCH_ASSOC);
+        return $results;
     }
 
     public function addMatch($image=false){
         if($image == false){
-            $image = NULL;
+            $image = "";
         }
-        $sql = $this->db->prepare('INSERT INTO matches (date,image, team1_id, team2_id, stadium_id,description) VALUES (:date , :image, (SELECT id FROM teams WHERE name =  :team_1), (SELECT id FROM teams WHERE name = :team_2) , (SELECT id FROM stadiums WHERE name = :stadium), :description');
+        else{$image = $this->uploadImage();}
+        $sql = $this->db->prepare('INSERT INTO matches (date,image, team1_id, team2_id, stadium_id,description) VALUES (:date , :image, (SELECT id FROM teams WHERE name =  :team_1), (SELECT id FROM teams WHERE name = :team_2) , (SELECT id FROM stadiums WHERE name = :stadium),:description)');
         $sql->bindParam(':date', $_POST['date']);
         $sql->bindParam(':image', $image);
         $sql->bindParam(':team_1', $_POST['team_1']);
@@ -52,15 +54,19 @@ class MatchesModel {
         }
     }
 
-    public function updateMatch($id){
-        $sql = $this->db->prepare('UPDATE matches SET date = :date , image = :image, team1_id = (SELECT id FROM teams WHERE name =  :team_1) , team2_id = (SELECT id FROM teams WHERE name = :team_2) , stadium_id = (SELECT id FROM stadiums WHERE name = :stadium) WHERE id = :id');
-        $this->db->bindParam(':id', $id);
-        $this->db->bindParam(':date', $_POST['date']);
-        $this->db->bindParam(':image', $_POST['image']);
-        $this->db->bindParam(':team_1', $_POST['team_1']);
-        $this->db->bindParam(':team_2', $_POST['team_2']);
-        $this->db->bindParam(':stadium', $_POST['stadium']);
-        if($this->db->execute()){
+    public function updateMatch($id,$image=""){
+        if($image != ""){
+            $image = $this->uploadImage();
+        }
+        $sql = $this->db->prepare('UPDATE matches SET date = :date , image = :image, team1_id = (SELECT id FROM teams WHERE name =  :team_1) , team2_id = (SELECT id FROM teams WHERE name = :team_2) , stadium_id = (SELECT id FROM stadiums WHERE name = :stadium) , description = :description WHERE id = :id');
+        $sql->bindParam(':id', $id);
+        $sql->bindParam(':date', $_POST['date']);
+        $sql->bindParam(':image', $image);
+        $sql->bindParam(':team_1', $_POST['team_1']);
+        $sql->bindParam(':team_2', $_POST['team_2']);
+        $sql->bindParam(':stadium', $_POST['stadium']);
+        $sql->bindParam(':description', $_POST['description']);
+        if($sql->execute()){
             return true;
         } else {
             return false;
@@ -69,8 +75,8 @@ class MatchesModel {
 
     public function deleteMatch($id){
         $sql = $this->db->prepare('DELETE FROM matches WHERE id = :id');
-        $this->db->bindParam(':id', $_GET['id']);
-        if($this->db->execute()){
+        $sql->bindParam(':id', $id);
+        if($sql->execute()){
             return true;
         } else {
             return false;

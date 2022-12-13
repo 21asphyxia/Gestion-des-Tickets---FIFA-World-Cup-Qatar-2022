@@ -1,4 +1,5 @@
 <?php
+include '../../models/TeamsModal.php';
 $adminTitle='Teams';
 include_once '../../includes/admin/head.php';
 ?>
@@ -27,7 +28,6 @@ include_once '../../includes/admin/head.php';
         <tbody>
 
         <?php 
-            include '../../models/TeamsModal.php';
             $b = new Teams();
             $b->select("teams","*");
             $result = $b->sql;
