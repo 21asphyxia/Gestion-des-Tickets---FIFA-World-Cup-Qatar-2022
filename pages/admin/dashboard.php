@@ -22,7 +22,11 @@ include_once '../../includes/admin/head.php';
                     <div class="numbers">
                         <p class="text-sm mb-0 text-capitalize font-weight-bold">Matchs Joués</p>
                         <h5 class="font-weight-bolder mb-0">
-                        5
+                        <?php
+                            $dsn = new SignUp();
+                            $number = $dsn->NumberRow("SELECT * FROM matches", array());
+                            echo $number;
+                            ?>
                         </h5>
                     </div>
                     </div>
@@ -43,7 +47,11 @@ include_once '../../includes/admin/head.php';
                     <div class="numbers">
                         <p class="text-sm mb-0 text-capitalize font-weight-bold">Stades Disponible</p>
                         <h5 class="font-weight-bolder mb-0">
-
+                            <?php
+                            $dsn = new SignUp();
+                            $number = $dsn->NumberRow("SELECT * FROM stadiums", array());
+                            echo $number;
+                            ?>
                         </h5>
                     </div>
                     </div>
@@ -66,7 +74,7 @@ include_once '../../includes/admin/head.php';
                         <h5 class="font-weight-bolder mb-0">
                         <?php
                         $dsn = new SignUp();
-                        $number = $dsn->NumberRow("SELECT * FROM users where role=?",array("spectator"));
+                        $number = $dsn->NumberRow("SELECT * FROM users where role=?", array("spectator"));
                         echo $number;
                         ?>
                         </h5>

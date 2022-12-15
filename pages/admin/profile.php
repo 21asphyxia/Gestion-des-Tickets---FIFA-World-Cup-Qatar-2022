@@ -48,7 +48,7 @@ include_once '../../includes/admin/head.php';
                           <div class="col-sm-3">
                             <h6 class="mb-0">Password</h6>
                           </div>
-                          <input name="passwordProfile" class="col-sm-9 text-secondary w-50" type="password" value="<?= $val["password"]?>"></input>
+                          <input name="passwordProfile" class="col-sm-9 text-secondary w-50" type="password" value=""></input>
                         </div>
                         <hr>
                         

@@ -32,8 +32,7 @@
         $id=$_SESSION["id"];
         $sql =$dsn->getRows("SELECT * FROM users WHERE id=?",array($id));
         foreach($sql as $val)
-           ?>
-          
+        ?>
           <div class="dropdown">
             <button class="btn btn-danger dropdown-toggle px-4" type="button" data-bs-toggle="dropdown" aria-expanded="false">
             <i class="fa-solid fa-user"></i>

@@ -3,6 +3,7 @@ require '../classes/SignUp.class.php';
 
 
 $dsn = new SignUp();
+
 if(isset($_POST["login"])){
     $email    = htmlspecialchars(trim($_POST["emailLogin"]));
     $password = htmlspecialchars(trim(md5($_POST["passwordLogin"])));
@@ -11,10 +12,11 @@ if(isset($_POST["login"])){
     $getrow = $dsn->getRows("SELECT * FROM users WHERE email = ? AND password=? ", array($email, $password));
     foreach ($getrow as $val)
     if($row != 0){
+
         $_SESSION["id"] = $val["id"];
         $_SESSION["email"] = $email;
         $_SESSION["role"] = $val["role"];
-            
+        
         if($val["role"] == "admin"){
             echo $val["role"];
             header('location:../pages/admin/dashboard.php');
