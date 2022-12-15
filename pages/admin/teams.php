@@ -1,6 +1,9 @@
 <?php
-include '../../models/TeamsModal.php';
 $adminTitle='Teams';
+include '../../models/TeamsModal.php';
+if(!isset($_SESSION["id"]) || $_SESSION["role"] != "admin"){
+  header('location:../../index.php');
+}
 include_once '../../includes/admin/head.php';
 ?>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css">

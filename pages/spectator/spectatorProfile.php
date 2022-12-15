@@ -1,7 +1,7 @@
 <?php
 $title = 'Profile';
 require_once('../../controllers/editprofilespecController.php');
-include_once '../../includes/admin/head.php';
+include_once '../../includes/spectator/head.php';
 ?>
 <body class="g-sidenav-show bg-gray-100">
     <main class="main-content position-relative max-height-vh-100 h-100 border-radius-lg ">

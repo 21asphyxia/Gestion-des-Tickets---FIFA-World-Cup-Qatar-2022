@@ -1,6 +1,9 @@
 <?php
 $adminTitle = 'Profile';
 require_once('../../controllers/updateprofileController.php');
+if(!isset($_SESSION["id"]) || $_SESSION["role"] != "admin"){
+  header('location:../../index.php');
+}
 include_once '../../includes/admin/head.php';
 ?>
 <body class="g-sidenav-show bg-gray-100">

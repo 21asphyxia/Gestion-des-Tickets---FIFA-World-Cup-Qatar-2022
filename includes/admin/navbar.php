@@ -3,8 +3,8 @@
 
 <?php
         $dsn = new Signup();
-        $email=$_SESSION["email"];
-        $sql =$dsn->getRows("SELECT * FROM users WHERE email=?",array($email));
+        $id=$_SESSION["id"];
+        $sql =$dsn->getRows("SELECT * FROM users WHERE id=?",array($id));
         foreach($sql as $val)
 ?>
 <nav class="navbar navbar-main navbar-expand-lg px-0 mx-4 shadow-none border-radius-xl" id="navbarBlur" navbar-scroll="true">
