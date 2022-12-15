@@ -1,5 +1,8 @@
 <?php $title = "Home";
 include "controllers/MatchesController.php";
+if(isset($_SESSION["id"]) && $_SESSION["role"] != "spectator"){
+    header('location:pages/admin/dashboard.php');
+  }
 include "controllers/StadiumsController.php";
 include_once("includes/spectator/head.php");
 ?>

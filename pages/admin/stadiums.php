@@ -1,7 +1,10 @@
 <?php
 $adminTitle = "Stadiums";
-include_once '../../includes/admin/head.php';
 include "../../controllers/StadiumsController.php";
+if(!isset($_SESSION["id"]) || $_SESSION["role"] != "admin"){
+  header('location:../../index.php');
+}
+include_once '../../includes/admin/head.php';
 
 
 $stadiums = new controllerStade();

@@ -30,10 +30,12 @@ class Tickets {
 
     public function reserveTicket(){
         $sql = $this->db->prepare('INSERT INTO tickets (serial_number, match_id, spectator_id,time) VALUES (:serial, :match, :spectator, :time)');
-        $sql->bindParam(':serial', uniqid());
+        $uniqid = uniqid();
+        $sql->bindParam(':serial', $uniqid);
         $sql->bindParam(':match', $_GET['id']);
         $sql->bindParam(':spectator', $_SESSION['id']);
-        $sql->bindParam(':time', date("Y-m-d H:i:s"));
+        $date = date("Y-m-d H:i:s");
+        $sql->bindParam(':time', $date);
         if($sql->execute()){
             return true;
         } else {

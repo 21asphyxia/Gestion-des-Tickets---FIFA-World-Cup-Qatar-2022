@@ -2,6 +2,12 @@
 <?php
 $title = "Reservation";
 include '../../controllers/ReservationController.php';
+if(isset($_SESSION["id"])){
+  if($_SESSION["role"] != "spectator"){
+  header('location:../../pages/admin/dashboard.php');}}
+else{
+  header('location:../../index.php');
+}
 include_once '../../includes/spectator/head.php';
 ?>
 
