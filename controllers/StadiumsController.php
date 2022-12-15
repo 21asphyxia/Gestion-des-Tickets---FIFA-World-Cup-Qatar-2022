@@ -106,18 +106,10 @@ $stadium->UpdateStade();
 
 
 if(isset($_POST['getStad'])){
-    // header('Content-Type : application/json');
     
     echo json_encode($stadium->getSpecificStad($_POST['getStad']));
     die;
 }
-
-
-
-
-
-
-// dirname(__DIR__).'/pages/admin/stadiums.php';
 
 
 ?>

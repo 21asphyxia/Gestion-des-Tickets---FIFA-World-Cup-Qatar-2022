@@ -22,15 +22,15 @@
           <a class="nav-link active fw-bold" aria-current="page" href="#">Contact</a>
         </li>
       </ul>
-      <?php if(!isset($_SESSION["email"])){ ?>
+      <?php if(!isset($_SESSION["id"])){ ?>
             <div class="d-flex justify-content-center">
             <button id="btnLogin" class="btn btn-outline m-2 text-nowrap" type="button" data-bs-toggle="modal" data-bs-target="#login">log In</button>
             <button id="btnSignup" class="btn btn-outline m-2 text-nowrap" type="button" data-bs-toggle="modal" data-bs-target="#signup">Sign Up</button>
       </div>
         <?php }else{
         $dsn = new Signup();
-        $email=$_SESSION["email"];
-        $sql =$dsn->getRows("SELECT * FROM users WHERE email=?",array($email));
+        $id=$_SESSION["id"];
+        $sql =$dsn->getRows("SELECT * FROM users WHERE id=?",array($id));
         foreach($sql as $val)
            ?>
           
@@ -40,7 +40,7 @@
               <?= $val["name"];?>
             </button>
             <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="../../pages/spectator/spectatorProfile.php">Profile</a></li>
+              <li><a class="dropdown-item" href="pages/spectator/spectatorProfile.php">Profile</a></li>
               <li><a class="dropdown-item" href="controllers/logoutController.php">Sign out</a></li>
             </ul>
           </div>
