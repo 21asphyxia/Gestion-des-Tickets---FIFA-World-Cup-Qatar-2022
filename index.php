@@ -60,7 +60,7 @@ include_once("includes/spectator/head.php");
             $b->select("teams","*");
             $result = $b->sql;
         ?>
-        
+        <!-- <div class="row"> -->
         <div class="carousel-cell js-flickity" data-flickity-options='{ "wrapAround": true , "groupCells":1 }'>
         
             <?php while ($row = $result->fetch(PDO::FETCH_ASSOC)) { ?>

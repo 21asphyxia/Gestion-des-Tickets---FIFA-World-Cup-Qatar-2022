@@ -9,6 +9,16 @@ include_once '../../includes/admin/head.php';
     <main class="main-content position-relative max-height-vh-100 h-100 border-radius-lg ">
         <?php include_once '../../includes/admin/navbar.php';?>
         <!-- Content -->
+          <!-- MESSAGE NOTIFICATION -->
+          <?php
+            if(isset($_SESSION['message'])){?>
+
+            <div class="alert alert-secondary alert-dismissible fade show" role="alert" id="success-alert">
+              <strong><?= $_SESSION['message'];?></strong>
+            </div>
+
+          <?php unset($_SESSION['message']);}?>
+
             <!-- TABLEAU -->
         <div class="tableContainer m-4">
         <div class="d-flex justify-content-end m-3">
@@ -133,3 +143,8 @@ include_once '../../includes/admin/head.php';
   </script>
 
 
+<script>
+ setTimeout(function() {
+        bootstrap.Alert.getOrCreateInstance(document.querySelector(".alert")).close();
+    }, 3000)
+</script>

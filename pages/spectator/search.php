@@ -20,10 +20,10 @@ include_once("../../includes/spectator/head.php");
 
   <!-- SEARCH -->
   <section class="cardsSection mx-5">
-
+  <span class="fs-6 fw-bolder text-center d-flex justify-content-center">Browse National Teams</span>
   <!-- ////////////////////////// Browse National Teams /////////////////////////////////-->
-  <div class="d-flex flex-column align-items-center justify-content-between mt-4 mb-3">
-    <span class="fs-6 fw-bolder">Browse National Teams</span>
+  <div class="d-flex flex-wrap justify-content-center mt-4 mb-3">
+    
     
         <?php
         if(isset($_POST["search"])){
