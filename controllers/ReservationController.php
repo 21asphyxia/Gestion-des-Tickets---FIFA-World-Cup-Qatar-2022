@@ -8,3 +8,8 @@
     if(isset($_GET['id'])){
         $match=$readMatches->getMatchById($_GET['id']);
     }
+
+    $readTickets = new Tickets();
+    if (isset($_POST['reserve'])) {
+        $readTickets->reserveTicket();
+    }
