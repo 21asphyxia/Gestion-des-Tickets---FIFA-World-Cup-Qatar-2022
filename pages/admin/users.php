@@ -43,7 +43,7 @@ include_once '../../includes/admin/head.php';
             <td class="align-middle" >
                 <div class="d-flex flex-wrap justify-content-around">
                     <a href="users.php?updateId=<?php echo $row['id']; ?>" type="button" class="btn btn-warning d-flex" ></i>Update Role</a>
-                    <a href="" type="button" class="btn btn-success d-flex" ></i>View Tickets</a>
+                    <a href="tickets.php?id=<?php echo $row['id']; ?>" type="button" class="btn btn-success d-flex" ></i>View Tickets</a>
                 </div>
             </td>
           </tr>

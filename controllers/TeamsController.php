@@ -31,7 +31,7 @@
             }
         }
         //ADD TEAM IMAGE
-        echo "first";
+        
         $a = new Teams();
         $a->insert('teams',['name'=>$country,'team_group'=>$groups,'flag'=>$flag,'team_image'=>$team]);
         if ($a == true) {

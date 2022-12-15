@@ -40,6 +40,7 @@
             </button>
             <ul class="dropdown-menu">
               <li><a class="dropdown-item" href="<?= ($title == "Home")? "" : "../../"?>pages/spectator/spectatorProfile.php">Profile</a></li>
+              <li><a class="dropdown-item" href="<?= ($title == "Home")? "" : "../../"?>pages/spectator/spectatorTickets.php">My Tickets</a></li>
               <li><a class="dropdown-item" href="<?= ($title == "Home")? "" : "../../"?>controllers/logoutController.php">Sign out</a></li>
             </ul>
           </div>
