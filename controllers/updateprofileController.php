@@ -12,9 +12,14 @@ foreach ($getrow as $val);
 if(isset($_POST["updateProfile"])){
     $name=$_POST["nameProfile"];
     $email=$_POST["emailProfile"];
-    $password = $_POST["passwordProfile"];
-    $dsn->updateProfile("UPDATE users SET name =?, email =?, password =? WHERE email =?", array($name,$email,$password,$emailS));
-    $_SESSION["email"] = $email;
+    $userId = $_SESSION['id'];
+    if($_POST["passwordProfile"] != ""){
+        $password = htmlspecialchars(trim(md5($_POST["passwordProfile"])));
+        $dsn->updateProfile("UPDATE users SET name =?, email =?, password =? WHERE id =?", array($name,$email,$password,$userId));
+        }
+        else{
+            $dsn->updateProfile("UPDATE users SET name =?, email =? WHERE id =?", array($name,$email,$userId));
+        }
     header('location:profile.php');
 }
 

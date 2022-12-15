@@ -1,4 +1,12 @@
 <!-- Navbar -->
+<?php require_once('C:\xampp\htdocs\Gestion-des-Tickets---FIFA-World-Cup-Qatar-2022\classes\SignUp.class.php');?>
+
+<?php
+        $dsn = new Signup();
+        $email=$_SESSION["email"];
+        $sql =$dsn->getRows("SELECT * FROM users WHERE email=?",array($email));
+        foreach($sql as $val)
+?>
 <nav class="navbar navbar-main navbar-expand-lg px-0 mx-4 shadow-none border-radius-xl" id="navbarBlur" navbar-scroll="true">
       <div class="container-fluid py-1 px-3">
         <nav aria-label="breadcrumb">
@@ -9,14 +17,14 @@
           <h6 class="font-weight-bolder mb-0"><?= $adminTitle ?></h6>
         </nav>
         <div class="collapse navbar-collapse mt-sm-0 mt-2 me-md-0 me-sm-4" id="navbar">
-          
           </div>
           <ul class="navbar-nav  justify-content-end">
-            
             <li class="nav-item d-flex align-items-center">
               <a href="javascript:;" class="nav-link text-body font-weight-bold px-0">
                 <i class="fa fa-user me-sm-1"></i>
-                <span class="d-sm-inline d-none">ProfileName</span>
+                <span class="d-sm-inline d-none">
+                <?= $val["name"];?>
+                </span>
               </a>
             </li>
             <li class="nav-item d-xl-none ps-3 d-flex align-items-center">

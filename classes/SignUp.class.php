@@ -3,25 +3,26 @@
 
 class SignUp extends Database {
 
-   public function Insertdata($query,$param=[]){
+   public function Insertdata($query, $param=[]){
     try{
         $sqlstatment = $this->con->prepare($query);
         $sqlstatment->execute($param);
     }catch(Exception $e){
             $e->getMessage();
     }
-
    }
-   public function NumberRow($query,$param){
+
+   public function NumberRow($query, $param){
        try{
         $sqlstatment = $this->con->prepare($query);
         $sqlstatment->execute($param);
-            return $sqlstatment->rowcount();
+        return $sqlstatment->rowcount();
        }catch(Exception $e){
             $e->getMessage();
        }
    }
-   public function getRows($query,$param=[]){
+
+   public function getRows($query, $param=[]){
     try{
         $sqlstatment = $this->con->prepare($query);
         $sqlstatment->execute($param);
@@ -31,7 +32,7 @@ class SignUp extends Database {
        }
    }
 
-   public function updateProfile($query,$param=[]){
+   public function updateProfile($query, $param=[]){
     try{
         $sqlstatment = $this->con->prepare($query);
         $sqlstatment->execute($param);
