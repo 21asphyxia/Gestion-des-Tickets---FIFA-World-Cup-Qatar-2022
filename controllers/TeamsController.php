@@ -35,7 +35,10 @@
         $a = new Teams();
         $a->insert('teams',['name'=>$country,'team_group'=>$groups,'flag'=>$flag,'team_image'=>$team]);
         if ($a == true) {
+            
+            $_SESSION['message'] = "Team has been added successfully !";
             header('location:../pages/admin/teams.php');
+            
         }
     }
 
@@ -60,6 +63,8 @@
 
     $a->delete('teams',"id='$id'");
     if ($a == true) {
+        
+        $_SESSION['message'] = "Team has been Deleted successfully !";
         header('location:../pages/admin/teams.php');
     }
     }
@@ -113,6 +118,7 @@
                 $a->update('teams',['name'=>$country,'team_group'=>$groups,'flag'=>$flag,'team_image'=>$team],$id);}
 
         if ($a == true) {
+            $_SESSION['message'] = "Team has been Updated successfully !";
             header('location:../pages/admin/teams.php');
         }
     

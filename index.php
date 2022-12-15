@@ -12,10 +12,10 @@ include_once("includes/spectator/head.php");
     <section id="banner" class="position-relative">
       <img src="assets/img/banner.png" alt="banner" width="100%">
       <div class="w-100">
-        <form id="searchBar" class="bottom-0 d-flex justify-content-center flex-wrap row mx-0 gy-1">
-          <input class="col-10 col-sm-4" type="text" placeholder="Search by matches, teams, stadiums, and more">
+        <form id="searchBar" action="pages/spectator/search.php" method="POST" class="bottom-0 d-flex justify-content-center flex-wrap row mx-0 gy-1">
+          <input class="col-10 col-sm-4" name="text" type="text" placeholder="Search by matches, teams, stadiums, and more">
           <input class="col-10 col-sm-4 date-selection" type="text" name="date" placeholder="&#xf073;  Select date">
-          <button type="button" class="btn-prim col-10 col-sm-2"><i class="bi bi-search"></i> Search</button>
+          <button type="submit" name="search" class="btn-prim col-10 col-sm-2"><i class="bi bi-search"></i> Search</button>
         </form>
       </div>
     </section>
