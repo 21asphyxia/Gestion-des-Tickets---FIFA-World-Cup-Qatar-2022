@@ -1,5 +1,6 @@
 <?php
 require_once(__DIR__.'/../config/database.php');
+require_once(__DIR__.'/../models/MatchesModel.php');
 
 // Tickets model
 class Tickets {
@@ -24,7 +25,25 @@ class Tickets {
             'SELECT * FROM tickets WHERE id = :id');
         $sql->bindParam(':id', $id);
         $sql->execute();
-        $results = $sql->fetch(PDO::FETCH_ASSOC);
+        $results = $sql->fetchAll(PDO::FETCH_ASSOC);
+        return $results;
+    }
+
+    public function getTicketByUserId($id){
+        $match = new MatchesModel;
+        $sql = $this->db->prepare(
+            'SELECT * FROM tickets WHERE spectator_id = :id');
+        $sql->bindParam(':id', $id);
+        $sql->execute();
+        $results = $sql->fetchAll(PDO::FETCH_ASSOC);
+        foreach($results as $key => $value){
+            $results[$key]['match'] = $match->getMatchById($value['match_id']);
+            // $results[$key]['match']['home_team'] = $team->select("teams","name","id=".$results[$key]['match']['team1_id']);
+            // $results[$key]['match']['away_team'] = $team->select("teams","name","id=".$results[$key]['match']['team2_id']);
+            // echo "<pre>";
+            // print_r($results);
+        }
+        
         return $results;
     }
 
